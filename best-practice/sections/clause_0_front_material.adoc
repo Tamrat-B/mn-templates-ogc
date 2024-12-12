@@ -8,17 +8,11 @@ Keywords inserted here automatically by Metanorma
 
 .Preface
 
-[NOTE]
-====
-Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work.
+In March 2024, during the 128th OGC Member Meeting in Delft, Netherlands, discussions began among members and co-chairs of the 3DIM, Geo for Metaverse, Urban Digital Twins DWGs, and the CityGML SWG about the need for an OGC profile or best practice document to address fragmentation and inconsistency in CityGML implementations. This led to a formal proposal presented at the 129th OGC Member Meeting in Montreal, Canada, advocating for a standardized approach to consolidate frequently used aspects of CityGML.
 
-There are two ways to specify the Preface: "simple clause" or "full clasuse"
+The proposed CityGML Best Practices Document aims to enhance adoption, improve interoperability, and provide a consistent template for publishing CityGML data while harmonizing various encodings and implementations. It focuses on reducing fragmentation by standardizing the most commonly used elements of CityGML, addressing interoperability issues from diverse software support, and avoiding redundancy through standardized profiles.
 
-If the Preface does not contain subclauses, it is considered a simple preface clause. This one is entered as text after the `.Preface` label and must be placed between the AsciiDoc document attributes and the first AsciiDoc section title. It should not be give a section title of its own.
-
-If the Preface contains subclauses, it needs to be encoded as a full preface clause. This one is recognized as a full Metanorma AsciiDoc section with te title "Preface", i.e. `== Preface`. (Simple preface content can also be encoded like full preface.) 
-
-====
+Drawing on existing industry trends and use cases, such as the ADV profile in Germany and 3CIM in Sweden, the document will use CityGML 3.0 and CityJSON-supported features as a baseline. It will provide a minimal template for key elements like buildings, street furniture, bridges, and vegetation, and will be developed in consultation with cities with established CityGML workflows to ensure it meets real-world needs.
 
 ////
 *OGC Declaration*
@@ -49,7 +43,12 @@ Attention is drawn to the possibility that some of the elements of this document
 [abstract]
 == Abstract
 
-<Insert Abstract Text here>
+The CityGML Best Practices Document aims to address fragmentation and inconsistency in CityGML implementations by providing a standardized approach that consolidates frequently used aspects of CityGML. This document seeks to increase CityGML adoption, enhance interoperability, and offer a template for cities to publish consistent CityGML data while harmonizing various encodings and implementations.
+
+It focuses on reducing fragmentation by selecting and promoting the most commonly used elements of CityGML, mitigating challenges posed by diverse modules, Levels of Detail (LODs), and geometric definitions. The document also addresses interoperability issues stemming from heterogeneous software support and aims to avoid redundancy by standardizing profiles, thus promoting consistency and efficiency.
+
+Inspired by existing industry trends and use cases, such as the ADV profile in Germany and 3CIM in Sweden, the CityGML Best Practices Document will use CityGML 3.0 and CityJSON-supported features as a baseline. It will develop a minimal template covering key elements like buildings, street furniture, bridges, and vegetation. The document will be created in consultation with cities with established CityGML workflows to ensure it meets practical, real-world requirements.
+
 
 [.preface]
 == Security Considerations
@@ -81,22 +80,18 @@ All questions regarding this submission should be directed to the editor or the 
 |===
 |Name |Affiliation |OGC member
 
-|Steve Liang | University of Calgary, Canada / SensorUp Inc. | Yes
+|Tamrat Belayneh | Esri, USA | Yes
+|Volker Coors| HFT, Germany | Yes
+|Hugo Ledoux, Jantien Stoter| TU Delft, Netherlands | Yes
+|Claus Nagel| Virtual City Systems , Germany | Yes
+|Christian Dahmen| Conterra , Germany | Yes
 |===
 
 
 [.preface]
 == Contributors
 
-//This clause is optional.
-
 Additional contributors to this Standard include the following:
 
-Individual name(s), Organization
-
-[NOTE]
-====
-If you need to place any further sections in the preface area
-use the `[.preface]` attribute.
-====
+Rob Atkinson, OGC
 

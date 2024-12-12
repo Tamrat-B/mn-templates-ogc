@@ -1,29 +1,50 @@
 == Clause containing normative material
 
-Paragraph
+The CityGML Best Practice Guidance document provides an overview of how various CityGML modules align with the CityGML Standard.
 
-=== Requirement Class A or Requirement A Example
+CityGML encompasses several modules. The overall CityGML data model is thematically decomposed into a CityGML core module and extension modules. Each module is
+defined within its own globally unique XML namespace. Due to this modularization approach, there are various versions of valid CityGML
+documents are not valid CityGML 1.0.0 instance documents. As a result the Best Practice Guidance documents details varying levels of support:
 
-Paragraph – intro text for the requirement class.
+- **Core CityGML Module**: This module is partially supported due to the implementation challenges associated with NURBS and ExternalReferences, which contribute to fragmentation. Despite these challenges, features like Implicit Geometries are supported.
+  
+- **Appearance Module**: Support is partial because it does not accommodate the TexCoordGen class, which requires UV coordinates in texture files.
 
-Use the following table for Requirements Classes.
+- **Fully Supported Modules**: The following modules are fully supported: Bridge, Building, CityFurniture, Construction, Generics, LandUse, Transportation, Tunnel, Vegetation, and WaterBody.
 
-include::../requirements/requirements_class.adoc[]
+- **CityObjectGroup Module**: This module is partially supported. It supports groups of City Objects but does not extend to sub-groups, such as walls within a building.
 
-==== Requirement 1
+- **Unsupported Modules**: The following modules are not supported:
+  - **Dynamizer**: Issues include the lack of support for semantically thin Dynamizer systems.
+  - **PointCloud**: No current support is provided.
+  - **Tin**: Support is impractical due to constraints with Delaunay triangulation.
+  - **RasterRelief**: Only TINRelief/TriangulatedSurface is supported; alternatives for unsupported formats are suggested.
+  - **Versioning**: Relies on a git-based approach similar to CityJSON.
 
-Paragraph - intro text for the requirement.
-
-Use the following table for Requirements, number sequentially.
-
-include::../requirements/requirement.adoc[]
-
-Dictionary tables for requirements can be added as necessary. Modify the following example as needed.
+The document also notes that database solutions are specific, and alternative methods are recommended for formats like RasterRelief that are not supported.
 
 [width="90%",options="header"]
 |===
-|Names |Definition |Data types and values |Multiplicity and use
-|name 1 |definition of name 1 |float |One or more (mandatory)
-|name 2 |definition of name 2 |character string type, not empty |Zero or one (optional)
-|name 3 |definition of name 3 |GML:: Point PropertyType |One (mandatory)
+|CityGML module |Compliant? |CityJSON inspired
+
+|Core|PARTIAL|NURBS are not supported, Implicit Geometries are supported .ExternalReferences are not supported.
+|Appearance|PARTIAL| the CityGML class TexCoordGen is not supported, ie one must specify the UV coordinates in the texture files.
+|Bridge|YES
+|Building|YES	 
+|CityFurniture|YES	 
+|CityObjectGroup|PARTIAL|groups of City Objects are supported, but not groups of parts of objects (eg it is not possible to group some walls of a building together)
+|Construction|YES|	 
+|Dynamizer|NO|Semantically thin, dedicated systems
+|Generics|YES	
+|LandUse|YES	 
+|PointCloud|NO
+|Relief|TBd|only the TINRelief/TriangulatedSurface is supported. 
+|Tin|NO|(where only elevation points and break lines are stored) is not supported since it would require viewer/applications to have a constrained Delaunay triangulator, which is problematic (especially for web-based tools). Also, it is not possible to store areas over a terrain that would support different resolutions. 
+|RasterRelief|NO|is also not supported -> other, better formats?
+|Transportation|YES	 
+|Tunnel|YES
+|Vegetation|YES	 
+|Versioning|NO|CityJson using git based approach
+|Database|specific solutions?
+|WaterBody|YES
 |===

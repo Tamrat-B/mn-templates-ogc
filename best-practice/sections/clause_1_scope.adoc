@@ -1,5 +1,9 @@
 == Scope
-[NOTE]
-====
-Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.
-====
+This document provides best practices for effectively using CityGML, with a focus on its application across a range of scenarios frequently encountered by cities and municipalities. It is designed to guide the use of CityGML as a robust data model for storing geometric information related to the built environment within a 3D System of Records.
+
+**Interoperability**
+
+- This best practice document aims to enhance interoperability between various software packages, facilitating seamless integration and implementation of CityGML for developers. By standardizing practices, it supports consistent and efficient use across different platforms and applications.
+- The document is tailored to address the most common use cases for CityGML, particularly the storage and management of geometric data concerning the built environment in a comprehensive 3D warehouse.
+
+The document adopts a semantically minimal approach, focusing exclusively on attributes directly related to built objects. This approach ensures clarity and avoids unnecessary complexity. It acknowledges that cities may use additional, specialized systems to manage other types of data, such as demographics, traffic flows, and similar information. As such, this best practice document does not encompass these areas but provides the flexibility for implementers to connect to external resources or extend the profile to suit specific needs.
