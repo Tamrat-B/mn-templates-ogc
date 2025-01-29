@@ -7,4 +7,10 @@ Paragraph
 
 Paragraph
 
-=== Clauses not containing normative material sub-clause 2
+General Principles: 
+
+- Flat representation (similar to 3DCityDB & CityJSON) -> not really profile
+- Semanticall Thin (link to external sources, rather than copyying in)
+- Avoid Reduancy (if better sources are usually available, i.e. terrain, road)
+
+

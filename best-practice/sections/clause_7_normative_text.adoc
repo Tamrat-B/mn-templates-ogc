@@ -1,12 +1,13 @@
-== Clause containing normative material
+== Clause containing normative material - Minimal Profile
 
+=== Modules
 The CityGML Best Practice Guidance document provides an overview of how various CityGML modules align with the CityGML Standard.
 
 CityGML encompasses several modules. The overall CityGML data model is thematically decomposed into a CityGML core module and extension modules. Each module is
 defined within its own globally unique XML namespace. Due to this modularization approach, there are various versions of valid CityGML
 documents are not valid CityGML 1.0.0 instance documents. As a result the Best Practice Guidance documents details varying levels of support:
 
-- **Core CityGML Module**: This module is partially supported due to the implementation challenges associated with NURBS and ExternalReferences, which contribute to fragmentation. Despite these challenges, features like Implicit Geometries are supported.
+- **Core CityGML Module**: This module is partially supported due to the implementation challenges associated with NURBS and ExternalReferences, which contribute to fragmentation. Due to the challenges to implement, Implicit Geometries are not supported.
   
 - **Appearance Module**: Support is partial because it does not accommodate the TexCoordGen class, which requires UV coordinates in texture files.
 
@@ -19,32 +20,88 @@ documents are not valid CityGML 1.0.0 instance documents. As a result the Best P
   - **PointCloud**: No current support is provided.
   - **Tin**: Support is impractical due to constraints with Delaunay triangulation.
   - **RasterRelief**: Only TINRelief/TriangulatedSurface is supported; alternatives for unsupported formats are suggested.
-  - **Versioning**: Relies on a git-based approach similar to CityJSON.
+  - **Versioning**: Relies on a external version control (git) or database system to handle version control
 
 The document also notes that database solutions are specific, and alternative methods are recommended for formats like RasterRelief that are not supported.
 
 [width="90%",options="header"]
 |===
-|CityGML module |Compliant? |CityJSON inspired
+|CityGML module |Included | Comment
 
-|Core|PARTIAL|NURBS are not supported, Implicit Geometries are supported .ExternalReferences are not supported.
+|Core|PARTIAL|NURBS are not supported, Implicit Geometries are not supported .ExternalReferences are not supported.
 |Appearance|PARTIAL| the CityGML class TexCoordGen is not supported, ie one must specify the UV coordinates in the texture files.
-|Bridge|YES
-|Building|YES	 
-|CityFurniture|YES	 
+|Bridge|YES|
+|Building|YES|	 
+|CityFurniture|YES|	 
 |CityObjectGroup|PARTIAL|groups of City Objects are supported, but not groups of parts of objects (eg it is not possible to group some walls of a building together)
-|Construction|YES|	 
+|Construction|Partial| Semantic surfaces are not supported	 
 |Dynamizer|NO|Semantically thin, dedicated systems
-|Generics|YES	
-|LandUse|YES	 
-|PointCloud|NO
-|Relief|TBd|only the TINRelief/TriangulatedSurface is supported. 
+|Generics|YES|	
+|LandUse|YES|	 
+|PointCloud|NO|
+|Relief|No| only the TINRelief/TriangulatedSurface is supported. 
 |Tin|NO|(where only elevation points and break lines are stored) is not supported since it would require viewer/applications to have a constrained Delaunay triangulator, which is problematic (especially for web-based tools). Also, it is not possible to store areas over a terrain that would support different resolutions. 
 |RasterRelief|NO|is also not supported -> other, better formats?
-|Transportation|YES	 
-|Tunnel|YES
-|Vegetation|YES	 
-|Versioning|NO|CityJson using git based approach
-|Database|specific solutions?
-|WaterBody|YES
+|Transportation|TBD|	 
+|Tunnel|TBD|
+|Vegetation|YES|	 
+|Versioning|NO|CityJson using git based approach, Database specific solutions?
+|WaterBody|TBD|
 |===
+
+
+
+
+==== Building Module
+
+.UML of Building Module
+image::../figures/UML_Building.bmp[UML of class Building, excluded components are greyed out]
+
+Should use:
+
+May include:
+*
+
+Not included:
+
+
+==== Construction Module
+
+.UML of Construction Module
+image::../figures/UML_Construction_Minimal.bmp[UML of class Construction, excluded components are greyed out]
+
+
+
+
+=== Geometry Objects
+==== Geometry Types
+The CityGML Conceptual Model does not put any restriction on the usage of specific geometry types as defined in ISO 19107. For example, 3D surfaces could be represented in a dataset using 3D polygons or 3D meshes such as triangulated irregular networks (TINS) or by non-uniform rational B-spline surfaces (NURBS). 
+
+In order to improve interoperability and facilitate implementation, this profile restricts to the use of 3d polygons and 3d meshes.
+
+
+
+
+==== Implicit Geometry
+
+Geometry shall be explicitly defined and may not be implicit.
+
+[TODO]
+====
+To be discussed, makes it much harder to implement
+====
+
+
+
+
+=== CRS 
+
+All CityObjects shall use the same CRS. 
+
+The coordinate reference system (CRS) shall be defined as a URL formatted according to the OGC Name Type Specification:
+
+http://www.opengis.net/def/crs/{authority}/{version}/{code}
+
+where {authority} designates the authority responsible for the definition of this CRS (usually "EPSG" or "OGC"), and where {version} designates the specific version of the CRS ("0" (zero) is used if there is no version).
+
+A projected, cartesian coordinate system shall be used.

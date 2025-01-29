@@ -1,0 +1,174 @@
+[obligation=informative]
+== Real World Use Cases / Applications
+This section describes common real world use cases (used in practice or planned for) for the use of Urban Digital Twins Profile by cities and planning authorities.
+These Use Cases also serve as a basis for the subset definition of the profile.
+
+=== Planning
+
+//==== Building Permit Process
+
+
+==== Urban Plan Communication
+
+
+Required: Buildings
+Benefitial: High LODs, Textures
+
+
+
+==== Urban Planning / Comprehensive Planning 
+
+Overview of projects accross cities (permiting & building status)
+SOR of planned projects
+
+Manage KPIs such as GFA Mix, FAR etc.
+
+
+Requires: Status of Projects, Units, Storeys
+
+Required Modules: Buildings, Construction
+Optional Modules: 
+
+
+=== Simulation & Analysis
+
+==== Sight & Shadow Analyis
+
+
+
+==== Solar Potential & Solar Irradiance
+
+The estimation of the solar potential for roofs and facades is an often cited application for 3D City Models and many cities ....
+
+
+
+
+==== Daylight Simulations
+In some countries, Daylight simulations are part of the urban planning or building permit process. 
+
+* To assess the impact of a new construction on daylight in existing buildings in the neighborhood
+* To assess if requirements for daylight are met in a new buildings
+
+The latter is usually conducted using architectural tools, using a detailed 3D model of the building in question (i.e. BIM) and less detailed models of the surrounding context. In this case, the 3D City Model only serves as a source for context and does not require detailed information on rooms or windows.
+
+The first case typically includes the calculation of solar irradiation at window level of surrounding buildings. 
+This requires information about the position and size of the the windows. Currently, most cities do not have this information available for existing (older) buildings. 
+
+
+Relevant Modules: Buildings
+Required Information: Windows
+
+
+
+
+==== Noise Simulation
+Noise Simulations become increasingly important as part of the urban planning process. The simulation input is usually noise sources and obstacles from which  the propagation of noise is calculated.
+
+3D City models are a useful foundation for the calculation of noise propagation as they include physical obstacles (buildings, sound barriers, vegetation) and potentially also include information about the acoustic properties of horizontal and vertical surfaces (hard vs soft surfaces). 
+
+While possible (i.e. Dynamizers) Noise sources are usually not stored as part of the 3D City Model and are derived from other sources (i.e. road database, which includes speed limits, surface material and traffic count). 
+
+The calculation of the noise propagation is performed in a dedicated software. An ETL process, combining different sources and preparing a suitable input format for the software is required.
+For performance benefits, a lower LOD of the city model is usually preferred.
+
+
+→ requires semantic information about hard vs soft surfaces
+→ requires informatio about speed limit etc on street → external reference
+
+Relevant Modules: Building, Vegetation, Transport, CityFurniture (Walls)
+Relevant Properties: Acoustic Surface Properties
+
+[TODO]
+====
+More information needed on the relevance / desire to use surface properties. Maybe, in practice, this is not relevant and can be simplified. 
+====
+
+
+
+==== Flood Simulation
+In some locations, flood simulations are an essential part of urban planning and emergency precaution.
+
+The main  input to the simulations are terrain and 3D objects (i.e. buildings).
+For more accurate calculations, information on ground roughness and infiltration capacity (permeable vs impermeable) are required. 
+
+While the simulation could theoretically be ran on a 3D City Model, the common hydorological models and simulation softwares rely on homogenous and continous raster DTMs as input. 
+
+These are in practice derived from a rasterized top view of the 3D objects (i.e. Buildings) combined with a DTM and (if applicable) additional raster layers describing surface coverage and permeability.
+
+
+Required Modules: Building, CityFurniture
+Optional Modules: Vegetation
+
+
+
+
+==== Urban Climate Indicators
+
+
+
+==== Indoor Wayfinding (First Response)
+
+
+==== Facility Management
+[TODO]
+====
+this requires further investigation
+====
+
+==== 3D Cadastre
+[TODO]
+====
+this requires further investigation
+
+// GWR
+Linked to other registries?
+
+====
+
+
+
+=== Summary of required Information
+
+
+
+[width="90%",options="header"]
+|===
+|Use Case |2nd Level Information (i.e. rooms) |  surface semantics (i.e. roof, windows)
+|Urban Plan Communication |not required| not required
+|Comprehensive Planning|benefitial|not required
+|Sight Analysis|not required|not required
+|Shadow Analysis|not required|not required
+|Solar Potential Estimation|not required|benefitial
+|Daylight Simulation|optional|required
+|Noise Simulation|not required|optional
+|Flood Simulation|not required|optional
+
+|Urban Climate Indicators|not required|optional
+|Indoor Wayfinding (First Response)|required|not required
+|Facility Management|required|not required
+|3D Cadastre|required|not required
+
+
+|===
+
+
+
+== Conclusion (Qualitative)
+
+* Buildings ist most used Module in the CityGML Data Model for 3DCIM applications
+* 2nd Level Building features (Rooms, Storey) are not yet widely used in practice, but cities are planning to use it and use cases have been described
+* Semantic Surface Information (especially "windows") are required for certain Simulation applications and improve the results of others. However, currently most existing 3D city models do not contain semantic information on surfaces. Some models do differentiate between "Roofs" and "Walls", but not "windows". This is mostly due to the fact that aquiring this information requires either a semantically correct BIM model as a source (for newer buildling), or an established workflow to derive this information from other sources (i.e. photogrammetry, street images)
+
+* Some use cases require information that are usually stored in dedicated systems, (i.e. traffic, demographics), rather than maintaining a semantically thick data motdel, real world applications suggest the use of external references
+* Simulation which requires surface semantics often requires specific file format as input, hence a convertion is needed
+
+
+
+
+
+
+-> show diagram, sources
+
+Summary of Requirements as a Table
+
+

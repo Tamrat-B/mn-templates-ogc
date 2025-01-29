@@ -61,6 +61,8 @@ include::sections/clause_5_conventions.adoc[]
 
 include::sections/clause_6_informative_text.adoc[]
 
+include::sections/clause_6_use_cases.adoc[]
+
 include::sections/clause_7_normative_text.adoc[]
 
 ////
