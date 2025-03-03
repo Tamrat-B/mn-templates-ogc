@@ -7,20 +7,6 @@ CityGML encompasses several modules. The overall CityGML data model is thematica
 defined within its own globally unique XML namespace. Due to this modularization approach, there are various versions of valid CityGML
 documents are not valid CityGML 1.0.0 instance documents. As a result the Best Practice Guidance documents details varying levels of support:
 
-- **Core CityGML Module**: This module is partially supported due to the implementation challenges associated with NURBS and ExternalReferences, which contribute to fragmentation. Due to the challenges to implement, Implicit Geometries are not supported.
-  
-- **Appearance Module**: Support is partial because it does not accommodate the TexCoordGen class, which requires UV coordinates in texture files.
-
-- **Fully Supported Modules**: The following modules are fully supported: Bridge, Building, CityFurniture, Construction, Generics, LandUse, Transportation, Tunnel, Vegetation, and WaterBody.
-
-- **CityObjectGroup Module**: This module is partially supported. It supports groups of City Objects but does not extend to sub-groups, such as walls within a building.
-
-- **Unsupported Modules**: The following modules are not supported:
-  - **Dynamizer**: Issues include the lack of support for semantically thin Dynamizer systems.
-  - **PointCloud**: No current support is provided.
-  - **Tin**: Support is impractical due to constraints with Delaunay triangulation.
-  - **RasterRelief**: Only TINRelief/TriangulatedSurface is supported; alternatives for unsupported formats are suggested.
-  - **Versioning**: Relies on a external version control (git) or database system to handle version control
 
 The document also notes that database solutions are specific, and alternative methods are recommended for formats like RasterRelief that are not supported.
 
@@ -52,23 +38,119 @@ The document also notes that database solutions are specific, and alternative me
 
 
 
+=== Required Modules
+
+
+
+
 ==== Building Module
 
+Applications must partially support the buildings module to comply with this profile.
+
+
+**Building & Building Part**
+Applications must support the TopLevelFeatureType "Building" as well as the FeatureType "BuildingPart".
+
+
+**Storeys & Rooms**
+Applications may support the FeatureTypes "BuildingRoom", "BuildingUnit" and "Storeys"
+
+
+**Storeys & Rooms**
+Applications may support the FeatureTypes "BuildingRoom", "BuildingUnit" and "Storeys"
+
+
+**Constructive **
+Applications may support the FeatureTypes "BuildingContructiveElements", "BuildingInstallation" and "BuildingFurniture"
+
+
+
+
 .UML of Building Module
-image::../figures/UML_Building.bmp[UML of class Building, excluded components are greyed out]
+image::./figures/FIG3002.bmp[UML of class Building, excluded components are greyed out]
 
-Should use:
 
-May include:
-*
 
-Not included:
+==== Bridge Module
+image::./figures/UML_Bridge.bmp[UML of class Bridge, excluded components are greyed out]
+
+
+==== Tunnel Module
+image::./figures/UML_Tunnel.bmp[UML of class Tunnel, excluded components are greyed out]
+
+
+==== Vegetation Module
+
+image::./figures/UML_Vegetation.bmp[UML of class Vegetion, not required components are greyed out]
+
+
+==== CityFurniture Module
+
+
+
+
+
+=== Optional Modules
+
+
+==== CityObjectGroup
+The support of the "Constructions""module is not required for compliance with this profile.
+
 
 
 ==== Construction Module
+The support of the "Constructions""module is not required for compliance with this profile.
+
 
 .UML of Construction Module
-image::../figures/UML_Construction_Minimal.bmp[UML of class Construction, excluded components are greyed out]
+image::./figures/FIG3001.bmp[UML of class Construction, excluded components are greyed out]
+
+
+==== Relief
+
+  - **Tin**: Support is impractical due to constraints with Delaunay triangulation.
+  - **RasterRelief**:  TINRelief/TriangulatedSurface is supported; alternatives for unsupported formats are suggested.
+
+
+==== Land Use
+
+==== Water Body
+
+==== Tunnel Module
+
+==== Generics Module
+
+==== Transportation Module
+
+
+
+
+==== Appearance
+The support of the "Constructions""module is not required for compliance with this profile.
+
+
+
+=== Excluded Modules
+Excluded from this profile. The following modules are not considered in the context of this best practice document
+
+==== Versioning
+The Versioning module is excluded from the scope of this profile.
+It is recommended to rely on a external version control (git) or database system to handle version control.
+
+
+==== Point Cloud 
+The Point Cloud module is excluded from the scope of this profile.
+
+
+
+==== Dynamizer
+The Versioning module is excluded from the scope of this profile.
+It is recommended to rely on dedicated systems / records for this kind of data.
+
+
+
+
+
 
 
 
@@ -86,10 +168,6 @@ In order to improve interoperability and facilitate implementation, this profile
 
 Geometry shall be explicitly defined and may not be implicit.
 
-[TODO]
-====
-To be discussed, makes it much harder to implement
-====
 
 
 
