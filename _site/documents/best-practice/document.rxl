@@ -1,0 +1,26 @@
+<bibdata type="standard">
+<title language="en" format="text/plain">OGC CityGML Implementation Guidance (Best Practice)</title>
+<uri type="xml">./document.xml</uri><uri type="pdf">./document.pdf</uri><uri type="doc">./document.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/BP/city_gml_best_practices/0.1</docidentifier><docidentifier type="ogc-internal" primary="true">24-999</docidentifier><docnumber>24-999</docnumber><date type="published"><on>2024-08-28</on></date><date type="issued"><on>2024-08-28</on></date><date type="received"><on>2024-08-28</on></date><contributor><role type="author"/><organization>
+<name>Esri</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>HFT</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>TU Delft</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>Virtual City Systems</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>Conterra</name>
+</organization></contributor><contributor><role type="editor"/><person>
+<name><completename>Tamrat Belayneh, Esri</completename></name>
+</person></contributor><contributor><role type="editor"/><person>
+<name><completename>Luis Gisler, Esri</completename></name>
+</person></contributor><contributor><role type="publisher"/><organization>
+<name>Open Geospatial Consortium</name>
+<abbreviation>OGC</abbreviation></organization></contributor><edition>1.0</edition><version><draft>1.0</draft></version><language>en</language><script>Latn</script><abstract><p>The CityGML Best Practices Document aims to address fragmentation and inconsistency in CityGML implementations by providing a standardized approach that consolidates frequently used aspects of CityGML. This document seeks to increase CityGML adoption, enhance interoperability, and offer a template for cities to publish consistent CityGML data while harmonizing various encodings and implementations.</p>
+
+<p>It focuses on reducing fragmentation by selecting and promoting the most commonly used elements of CityGML, mitigating challenges posed by diverse modules, Levels of Detail (LODs), and geometric definitions. The document also addresses interoperability issues stemming from heterogeneous software support and aims to avoid redundancy by standardizing profiles, thus promoting consistency and efficiency.</p>
+
+<p>Inspired by existing industry trends and use cases, such as the ADV profile in Germany and 3CIM in Sweden, the CityGML Best Practices Document will use CityGML 3.0 and CityJSON-supported features as a baseline. It will develop a minimal template covering key elements like buildings, street furniture, bridges, and vegetation. The document will be created in consultation with cities with established CityGML workflows to ensure it meets practical, real-world requirements.</p>
+</abstract><status><stage>draft</stage></status><copyright><from>2025</from><owner><organization>
+<name>Open Geospatial Consortium</name>
+<abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>CityGML</keyword><keyword>CityJSON</keyword><keyword>3D</keyword><ext><doctype>best-practice</doctype><subdoctype>general</subdoctype><flavor>ogc</flavor><editorialgroup><committee>technical</committee></editorialgroup></ext></bibdata>

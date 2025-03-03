@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ogc-standard xmlns="https://www.metanorma.org/ns/ogc" type="semantic" version="2.6.6" schema-version="v1.4.0">
+<bibdata type="standard">
+<title language="en" format="text/plain">OGC CityGML Implementation Guidance (Best Practice)</title>
+<uri type="xml">./document.xml</uri><uri type="pdf">./document.pdf</uri><uri type="doc">./document.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/BP/city_gml_best_practices/0.1</docidentifier><docidentifier type="ogc-internal" primary="true">24-999</docidentifier><docnumber>24-999</docnumber><date type="published"><on>2024-08-28</on></date><date type="issued"><on>2024-08-28</on></date><date type="received"><on>2024-08-28</on></date><contributor><role type="author"/><organization>
+<name>Esri</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>HFT</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>TU Delft</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>Virtual City Systems</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>Conterra</name>
+</organization></contributor><contributor><role type="editor"/><person>
+<name><completename>Tamrat Belayneh, Esri</completename></name>
+</person></contributor><contributor><role type="editor"/><person>
+<name><completename>Luis Gisler, Esri</completename></name>
+</person></contributor><contributor><role type="publisher"/><organization>
+<name>Open Geospatial Consortium</name>
+<abbreviation>OGC</abbreviation></organization></contributor><edition>1.0</edition><version><draft>1.0</draft></version><language>en</language><script>Latn</script><abstract><p>The CityGML Best Practices Document aims to address fragmentation and inconsistency in CityGML implementations by providing a standardized approach that consolidates frequently used aspects of CityGML. This document seeks to increase CityGML adoption, enhance interoperability, and offer a template for cities to publish consistent CityGML data while harmonizing various encodings and implementations.</p>
+
+<p>It focuses on reducing fragmentation by selecting and promoting the most commonly used elements of CityGML, mitigating challenges posed by diverse modules, Levels of Detail (LODs), and geometric definitions. The document also addresses interoperability issues stemming from heterogeneous software support and aims to avoid redundancy by standardizing profiles, thus promoting consistency and efficiency.</p>
+
+<p>Inspired by existing industry trends and use cases, such as the ADV profile in Germany and 3CIM in Sweden, the CityGML Best Practices Document will use CityGML 3.0 and CityJSON-supported features as a baseline. It will develop a minimal template covering key elements like buildings, street furniture, bridges, and vegetation. The document will be created in consultation with cities with established CityGML workflows to ensure it meets practical, real-world requirements.</p>
+</abstract><status><stage>draft</stage></status><copyright><from>2025</from><owner><organization>
+<name>Open Geospatial Consortium</name>
+<abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>CityGML</keyword><keyword>CityJSON</keyword><keyword>3D</keyword><ext><doctype>best-practice</doctype><subdoctype>general</subdoctype><flavor>ogc</flavor><editorialgroup><committee>technical</committee></editorialgroup></ext></bibdata><metanorma-extension><presentation-metadata><name>color-admonition-caution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-editor</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-important</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-note</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-safety-precaution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-tip</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-todo</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-warning</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-background-definition-description</name><value>rgb(242, 251, 255)</value></presentation-metadata><presentation-metadata><name>color-background-definition-term</name><value>rgb(215, 243, 255)</value></presentation-metadata><presentation-metadata><name>color-background-page</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-header</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-even</name><value>rgb(252, 246, 222)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-odd</name><value>rgb(254, 252, 245)</value></presentation-metadata><presentation-metadata><name>color-background-term-admitted-label</name><value>rgb(223, 236, 249)</value></presentation-metadata><presentation-metadata><name>color-background-term-deprecated-label</name><value>rgb(237, 237, 238)</value></presentation-metadata><presentation-metadata><name>color-background-term-preferred-label</name><value>rgb(249, 235, 187)</value></presentation-metadata><presentation-metadata><name>color-background-text-label-legacy</name><value>rgb(33, 60, 107)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-1</name><value>rgb(237, 193, 35)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-2</name><value>rgb(246, 223, 140)</value></presentation-metadata><presentation-metadata><name>color-text</name><value>rgb(88, 89, 91)</value></presentation-metadata><presentation-metadata><name>color-text-title</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>HTML TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>DOC TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>PDF TOC Heading Levels</name><value>2</value></presentation-metadata></metanorma-extension>
+<boilerplate><copyright-statement>
+
+<clause id="_copyright_notice" obligation="normative">
+<title>Copyright notice</title>
+<p id="_09cc624e-08fe-4298-0e48-fd64aab88de3" align="center">Copyright © 2025 Open Geospatial Consortium<br/> To obtain additional rights of use, visit<link target="https://www.ogc.org/legal"/></p>
+</clause>
+
+<clause id="_note" obligation="normative">
+<title>Note</title>
+<p id="_11e88dba-9912-1a89-a82d-7291bf232191" align="left">Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p>
+
+<p id="_15067213-c07b-cba0-7e18-395ab2e00ab3" align="left">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p>
+</clause>
+</copyright-statement>
+
+<license-statement>
+
+<clause id="_license_agreement" obligation="normative">
+<title>License Agreement</title>
+<p id="_f5fe34fd-12e2-2bb7-8cd6-9d4cffa96538">Use of this document is subject to the license agreement at <link target="https://www.ogc.org/license"/></p>
+</clause>
+</license-statement>
+
+<legal-statement>
+
+<clause id="_notice" obligation="normative">
+<title>Notice</title>
+<p id="_753bf54d-7f07-f353-959e-a08804c5efe3">This document defines an OGC Best Practice on a particular technology or approach related to an OGC standard. This document is <em>not</em> an OGC Standard and may not be referred to as an OGC Standard. It is subject to change without notice. However, this document is an <em>official</em> position of the OGC membership on this particular technology topic.</p>
+
+<p id="_d80fd0eb-fbfd-dec3-0ddb-92472f4d5fcf">Recipients of this document are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.</p>
+</clause>
+</legal-statement>
+
+<feedback-statement>
+
+</feedback-statement>
+</boilerplate><preface><abstract id="_abstract"><title>Abstract</title><p id="_90cfb269-f168-722e-bbbb-5755fb9e840a">The CityGML Best Practices Document aims to address fragmentation and inconsistency in CityGML implementations by providing a standardized approach that consolidates frequently used aspects of CityGML. This document seeks to increase CityGML adoption, enhance interoperability, and offer a template for cities to publish consistent CityGML data while harmonizing various encodings and implementations.</p>
+
+<p id="_c521dd81-e5ac-e715-9513-b53080015c82">It focuses on reducing fragmentation by selecting and promoting the most commonly used elements of CityGML, mitigating challenges posed by diverse modules, Levels of Detail (LODs), and geometric definitions. The document also addresses interoperability issues stemming from heterogeneous software support and aims to avoid redundancy by standardizing profiles, thus promoting consistency and efficiency.</p>
+
+<p id="_c161aa67-938c-4ac5-88c2-0c80ca3219d1">Inspired by existing industry trends and use cases, such as the ADV profile in Germany and 3CIM in Sweden, the CityGML Best Practices Document will use CityGML 3.0 and CityJSON-supported features as a baseline. It will develop a minimal template covering key elements like buildings, street furniture, bridges, and vegetation. The document will be created in consultation with cities with established CityGML workflows to ensure it meets practical, real-world requirements.</p>
+</abstract><foreword id="_ad8a1890-55f6-de4a-4e07-6e0e5f65c2df" obligation="informative">
+<title>Preface</title>
+<p id="_2f763f26-6996-e6e8-fdf0-1a8bf817bcbe">In March 2024, during the 128th OGC Member Meeting in Delft, Netherlands, discussions began among members and co-chairs of the 3DIM, Geo for Metaverse, Urban Digital Twins DWGs, and the CityGML SWG about the need for an OGC profile or best practice document to address fragmentation and inconsistency in CityGML implementations. This led to a formal proposal presented at the 129th OGC Member Meeting in Montreal, Canada, advocating for a standardized approach to consolidate frequently used aspects of CityGML.</p>
+
+<p id="_bee03a18-d29d-ecaf-926e-a16102ccf0e1">The proposed CityGML Best Practices Document aims to enhance adoption, improve interoperability, and provide a consistent template for publishing CityGML data while harmonizing various encodings and implementations. It focuses on reducing fragmentation by standardizing the most commonly used elements of CityGML, addressing interoperability issues from diverse software support, and avoiding redundancy through standardized profiles.</p>
+
+<p id="_b4d42bc9-97b7-a8b7-837d-93c1cd62f2d8">Drawing on existing industry trends and use cases, such as the ADV profile in Germany and 3CIM in Sweden, the document will use CityGML 3.0 and CityJSON-supported features as a baseline. It will provide a minimal template for key elements like buildings, street furniture, bridges, and vegetation, and will be developed in consultation with cities with established CityGML workflows to ensure it meets real-world needs.</p>
+</foreword><clause id="_security_considerations" type="security" obligation="informative">
+<title>Security Considerations</title>
+<p id="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae">No security considerations have been made for this Standard.</p>
+</clause><submitters id="_submitters">
+<title>Submitters</title>
+<p id="_c4485abb-cbc5-a7e8-5e00-c9c58a531cc9">All questions regarding this submission should be directed to the editor or the submitters:</p>
+
+<table id="_821dcc91-2d53-fde4-3803-257716c75892" unnumbered="true"><thead><tr><th valign="middle" align="left">Name</th>
+<th valign="middle" align="left">Affiliation</th>
+<th valign="middle" align="left">OGC member</th>
+</tr></thead>
+<tbody><tr><td valign="middle" align="left">Tamrat Belayneh</td>
+<td valign="middle" align="left">Esri, USA</td>
+<td valign="middle" align="left">Yes</td>
+</tr><tr><td valign="middle" align="left">Volker Coors</td>
+<td valign="middle" align="left">HFT, Germany</td>
+<td valign="middle" align="left">Yes</td>
+</tr><tr><td valign="middle" align="left">Hugo Ledoux, Jantien Stoter</td>
+<td valign="middle" align="left">TU Delft, Netherlands</td>
+<td valign="middle" align="left">Yes</td>
+</tr><tr><td valign="middle" align="left">Claus Nagel</td>
+<td valign="middle" align="left">Virtual City Systems , Germany</td>
+<td valign="middle" align="left">Yes</td>
+</tr><tr><td valign="middle" align="left">Christian Dahmen</td>
+<td valign="middle" align="left">Conterra , Germany</td>
+<td valign="middle" align="left">Yes</td>
+</tr></tbody>
+</table>
+</submitters><submitters id="_contributors" type="contributors">
+<title>Contributors</title>
+<p id="_621c4f5b-26a9-89f7-0840-938819089a27">Additional contributors to this Standard include the following:</p>
+
+<p id="_7f92920e-f90c-c369-957b-e4727cc176de">Rob Atkinson, OGC</p>
+</submitters></preface><sections>
+
+
+
+
+
+<clause id="_scope" type="scope" obligation="normative">
+<title>Scope</title>
+<p id="_f0ab7fcf-57c2-c273-9825-c1a4d1d5a52d">This document provides best practices for effectively using CityGML, with a focus on its application across a range of scenarios frequently encountered by cities and municipalities. It is designed to guide the use of CityGML as a robust data model for storing geometric information related to the built environment within a 3D System of Records.</p>
+
+<p id="_57ae938b-4594-1af8-e720-032e314df487"><strong>Interoperability</strong></p>
+
+<ul id="_fc254683-528f-534e-25ef-fffc4c4f247f"><li><p id="_c08d1c72-df26-bc2b-bcb4-9ec9ee8deae4">This best practice document aims to enhance interoperability between various software packages, facilitating seamless integration and implementation of CityGML for developers. By standardizing practices, it supports consistent and efficient use across different platforms and applications.</p>
+</li>
+<li><p id="_efa26a55-978a-504f-c854-8f285f0f4cfd">The document is tailored to address the most common use cases for CityGML, particularly the storage and management of geometric data concerning the built environment in a comprehensive 3D warehouse.</p>
+</li>
+</ul>
+
+<p id="_3effb83e-45da-aa71-2687-43e3c3d3db15">The document adopts a semantically minimal approach, focusing exclusively on attributes directly related to built objects. This approach ensures clarity and avoids unnecessary complexity. It acknowledges that cities may use additional, specialized systems to manage other types of data, such as demographics, traffic flows, and similar information. As such, this best practice document does not encompass these areas but provides the flexibility for implementers to connect to external resources or extend the profile to suit specific needs.</p>
+</clause>
+
+<clause id="_conformance" type="conformance" obligation="normative">
+<title>Conformance</title>
+<p id="_e4cf9ece-b567-8252-dd56-507dc5ba576b">This Best Practice defines XXXX.</p>
+
+<p id="_b116691a-08b1-0620-ae3d-86e5f3a8a421">Requirements for N standardization target types are considered:</p>
+
+<ul id="_7e05e339-83a3-d931-6767-a7c123e12b74"><li><p id="_1bd63b7e-eb98-ad43-1de4-c21d99d60ac2">AAAA</p>
+</li>
+<li><p id="_b6bc9b8a-bd3e-ce9e-7522-1f98d4945205">BBBB</p>
+</li>
+</ul>
+
+<p id="_9f12e6ab-c117-a173-7705-3a7b181baecd">Conformance with this Best Practice shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.</p>
+
+<p id="_ceda6837-81a3-2f09-36ad-6e8ccf9c9b9e">In order to conform to this OGC® interface Best Practice, a software implementation shall choose to implement:</p>
+
+<ul id="_85556d81-fbe8-6680-06da-7a660f86b7d0"><li><p id="_28d16a05-e578-c5ec-eb3f-87a36de9e044">Any one of the conformance levels specified in Annex A (normative).</p>
+</li>
+<li><p id="_0b67bb92-65e2-2183-4a16-11664b0f122f">Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).</p>
+</li>
+</ul>
+
+<p id="_6a1f2452-6389-31e4-2531-2aa634190de9">All requirements-classes and conformance-classes described in this document are owned by the documents(s) identified.</p>
+</clause>
+
+
+
+<terms id="_terms_and_definitions" obligation="normative">
+<title>Terms and definitions</title><p id="_7fe04b5b-db41-5d9b-ebe1-463b3a0c16c9">This document uses the terms defined in <link target="https://portal.ogc.org/public_ogc/directives/directives.php">OGC Policy Directive 49</link>, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this document and OGC documents do not use the equivalent phrases in the ISO/IEC Directives, Part 2.</p>
+
+<p id="_e0235fe8-8273-26b4-faeb-a580ad58929f">This document also uses terms defined in the OGC Standard for Modular specifications (<link target="https://portal.opengeospatial.org/files/?artifact_id=34762">OGC 08-131r3</link>), also known as the ‘ModSpec’. The definitions of terms such as standard, specification, requirement, and conformance test are provided in the ModSpec.</p>
+
+<p id="_1448dc16-8929-d666-6525-0249826c75e3">For the purposes of this document, the following additional terms and definitions apply.</p>
+
+<term id="term-example-term"><preferred><expression>
+<name>example term</name>
+</expression>
+</preferred>
+<definition><verbal-definition><p id="_06db0da1-214c-7f57-bd34-fd4f77edb6ed">term used for exemplary purposes</p></verbal-definition></definition>
+
+
+
+
+
+
+ <termnote id="_dba7a326-d460-4fd2-c200-c18e257c490b"><p id="_bfac9a8e-f9a1-75c6-e31d-dca8dc62be58">An example note.</p>
+</termnote><termexample id="_6e5e388f-3384-3fe0-1387-5c648e5561e6"><p id="_2d45db5a-97c4-2358-7890-3aa696c4b809">Here’s an example of an example term.</p>
+</termexample><termsource status="identical" type="authoritative"><origin bibitemid="ISO19101-1" type="inline" citeas="ISO&amp;#xa0;19101-1:2014"/></termsource></term>
+</terms>
+
+<clause id="_conventions" obligation="normative">
+<title>Conventions</title>
+<p id="_f287e0a4-ca0e-ef98-6e01-5d09472b62aa">This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.</p>
+
+<clause id="_identifiers" obligation="normative">
+<title>Identifiers</title>
+<p id="_c8ac66dd-f4bd-490a-852b-cbf5abe64505">The normative provisions in this document are denoted by the URI</p>
+
+<p id="_f0191874-4eeb-2c92-18f2-f1367cf61a60"><tt><link target="http://www.opengis.net/spec/{standard}/{m.n}"/></tt></p>
+
+<p id="_52250454-5ac3-4fce-7c83-eb454adf6103">All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.</p>
+</clause>
+</clause>
+
+<clause id="_clauses_not_containing_normative_material" obligation="informative">
+<title>Clauses not Containing Normative Material</title>
+<p id="_6f5c8cdc-826f-564e-03f0-7b929261119c">Paragraph</p>
+
+<clause id="_clauses_not_containing_normative_material_sub_clause_1" obligation="informative">
+<title>Clauses not containing normative material sub-clause 1</title>
+<p id="_a36cff3b-8b68-0916-ce8f-14564e331c3d">Paragraph</p>
+
+<p id="_d7198c42-a348-5ec6-1c39-037f9dd99db3">General Principles:</p>
+
+<ul id="_f151295e-f97c-4e17-b5d8-f76e3151a6dd"><li><p id="_5b7f3ddb-fbcb-4efe-d806-171f746a6c56">Flat representation (similar to 3DCityDB &amp; CityJSON) → not really profile</p>
+</li>
+<li><p id="_8080dc94-7189-ec79-5995-fa7a9878f488">Semanticall Thin (link to external sources, rather than copyying in)</p>
+</li>
+<li><p id="_4ee128dd-44a3-b61a-def8-bde06057de44">Avoid Reduancy (if better sources are usually available, i.e. terrain, road)</p>
+</li>
+</ul>
+</clause>
+</clause>
+
+<clause id="_real_world_use_cases_applications" obligation="informative">
+<title>Real World Use Cases / Applications</title>
+<p id="_8d0345a0-32aa-7c03-22c8-4efd9b3e1ffc">This section describes common real world use cases (used in practice or planned for) for the use of Urban Digital Twins Profile by cities and planning authorities. These Use Cases also serve as a basis for the subset definition of the profile.</p>
+
+<clause id="_planning" obligation="informative">
+<title>Planning</title>
+<clause id="_urban_plan_communication" obligation="informative">
+<title>Urban Plan Communication</title>
+<p id="_8dc33d5c-305d-a8ec-66cf-b973b40aef4c">Required: Buildings Benefitial: High LODs, Textures</p>
+</clause>
+
+<clause id="_urban_planning_comprehensive_planning" obligation="informative">
+<title>Urban Planning / Comprehensive Planning</title>
+<p id="_c6f75b10-f509-2a8c-b152-f6f4b58eb054">Overview of projects accross cities (permiting  building status) SOR of planned projects</p>
+
+<p id="_ac8393b5-ca3e-246e-10bf-e3a2bd43c9f7">Manage KPIs such as GFA Mix, FAR etc.</p>
+
+<p id="_59f8c6b7-eb67-cf56-590a-4f3df34cb1c1">Requires: Status of Projects, Units, Storeys</p>
+
+<p id="_1de578ce-7f89-854e-415b-1de58f951ea6">Required Modules: Buildings, Construction Optional Modules:</p>
+</clause>
+</clause>
+
+<clause id="_simulation_analysis" obligation="informative">
+<title>Simulation &amp; Analysis</title>
+<clause id="_sight_shadow_analyis" obligation="informative">
+<title>Sight &amp; Shadow Analyis</title>
+</clause>
+
+<clause id="_solar_potential_solar_irradiance" obligation="informative">
+<title>Solar Potential &amp; Solar Irradiance</title>
+<p id="_85f613d9-b417-feca-e60b-3d7c2cbc3e4e">The estimation of the solar potential for roofs and facades is an often cited application for 3D City Models and many cities …​.</p>
+</clause>
+
+<clause id="_daylight_simulations" obligation="informative">
+<title>Daylight Simulations</title>
+<p id="_3833bf94-c16c-4743-2acd-190b7312c273">In some countries, Daylight simulations are part of the urban planning or building permit process.</p>
+
+<ul id="_817e19d6-158e-ad70-2f69-9a4a32903de8"><li><p id="_86601a94-ba98-2547-c2d7-6d131a2d1d0e">To assess the impact of a new construction on daylight in existing buildings in the neighborhood</p>
+</li>
+<li><p id="_c49bc287-3f9f-c2a6-8e2c-6a61a6c0fd4a">To assess if requirements for daylight are met in a new buildings</p>
+</li>
+</ul>
+
+<p id="_dea2da9d-30e3-7956-7e5e-e4d136ca3fda">The latter is usually conducted using architectural tools, using a detailed 3D model of the building in question (i.e. BIM) and less detailed models of the surrounding context. In this case, the 3D City Model only serves as a source for context and does not require detailed information on rooms or windows.</p>
+
+<p id="_c12d430a-3c79-f7e0-1dbb-083ed01e0b24">The first case typically includes the calculation of solar irradiation at window level of surrounding buildings. This requires information about the position and size of the the windows. Currently, most cities do not have this information available for existing (older) buildings.</p>
+
+<p id="_6a52b24e-b438-e701-88aa-f1cc3583a027">Relevant Modules: Buildings Required Information: Windows</p>
+</clause>
+
+<clause id="_noise_simulation" obligation="informative">
+<title>Noise Simulation</title>
+<p id="_e8a043fc-1a7f-af76-0ea4-07f8b3387641">Noise Simulations become increasingly important as part of the urban planning process. The simulation input is usually noise sources and obstacles from which  the propagation of noise is calculated.</p>
+
+<p id="_9319c1da-3ef9-2598-c1f3-4303479e2165">3D City models are a useful foundation for the calculation of noise propagation as they include physical obstacles (buildings, sound barriers, vegetation) and potentially also include information about the acoustic properties of horizontal and vertical surfaces (hard vs soft surfaces).</p>
+
+<p id="_84edc00e-19d7-b00d-7633-fe701de07ad5">While possible (i.e. Dynamizers) Noise sources are usually not stored as part of the 3D City Model and are derived from other sources (i.e. road database, which includes speed limits, surface material and traffic count).</p>
+
+<p id="_2ae1635b-acb3-fd6e-1530-89a1e77d308b">The calculation of the noise propagation is performed in a dedicated software. An ETL process, combining different sources and preparing a suitable input format for the software is required. For performance benefits, a lower LOD of the city model is usually preferred.</p>
+
+<p id="_30ad4649-ed11-32ba-030a-a6b6082ae0d6">→ requires semantic information about hard vs soft surfaces → requires informatio about speed limit etc on street → external reference</p>
+
+<p id="_6e37f362-8f36-c96c-3542-2c82245758b6">Relevant Modules: Building, Vegetation, Transport, CityFurniture (Walls) Relevant Properties: Acoustic Surface Properties</p>
+
+<review id="_52b4b08d-0779-d849-c175-d5950589f682" reviewer="(Unknown)" date="2025-03-03T00:00:00Z" type="todo"><p id="_e2b0f06d-cc71-70d9-7b7c-eab162ba4e0d">More information needed on the relevance / desire to use surface properties. Maybe, in practice, this is not relevant and can be simplified.</p>
+</review></clause>
+
+<clause id="_flood_simulation" obligation="informative">
+<title>Flood Simulation</title>
+<p id="_862c3267-93db-da7b-e75a-e63d500420a7">In some locations, flood simulations are an essential part of urban planning and emergency precaution.</p>
+
+<p id="_6a45c847-c829-a08b-2c68-1a11cbf53464">The main  input to the simulations are terrain and 3D objects (i.e. buildings). For more accurate calculations, information on ground roughness and infiltration capacity (permeable vs impermeable) are required.</p>
+
+<p id="_a1a35f20-5caf-b924-b9b1-abc1fb489811">While the simulation could theoretically be ran on a 3D City Model, the common hydorological models and simulation softwares rely on homogenous and continous raster DTMs as input.</p>
+
+<p id="_0bccbc1e-a2bc-2cd6-0d6b-8ec8c17a440c">These are in practice derived from a rasterized top view of the 3D objects (i.e. Buildings) combined with a DTM and (if applicable) additional raster layers describing surface coverage and permeability.</p>
+
+<p id="_50a6a62d-0071-c77a-cb8d-f2b2f297239d">Required Modules: Building, CityFurniture Optional Modules: Vegetation</p>
+</clause>
+
+<clause id="_urban_climate_indicators" obligation="informative">
+<title>Urban Climate Indicators</title>
+</clause>
+
+<clause id="_indoor_wayfinding_first_response" obligation="informative">
+<title>Indoor Wayfinding (First Response)</title>
+</clause>
+
+<clause id="_facility_management" obligation="informative">
+<title>Facility Management</title>
+<review id="_32edcf0a-8a0f-366c-8efd-d16714d13dd6" reviewer="(Unknown)" date="2025-03-03T00:00:00Z" type="todo"><p id="_d8f59694-0209-096e-4399-aa0d1e451a2e">this requires further investigation</p>
+</review></clause>
+
+<clause id="_3d_cadastre" obligation="informative">
+<title>3D Cadastre</title>
+<review id="_e40f7f02-5d8c-0b67-aebc-de04e77468c5" reviewer="(Unknown)" date="2025-03-03T00:00:00Z" type="todo"><p id="_f8077d27-0b02-af04-8988-f3e559ce90b8">this requires further investigation</p>
+
+<p id="_d6ec4342-d270-2ccd-c455-466c1b18ce29">Linked to other registries?</p>
+</review></clause>
+</clause>
+
+<clause id="_summary_of_required_information" obligation="informative">
+<title>Summary of required Information</title>
+<table id="_c4fbfb72-3c87-eee0-355d-40b21a8af899" width="90%"><thead><tr><th valign="middle" align="left">Use Case</th>
+<th valign="middle" align="left">2nd Level Information (i.e. rooms)</th>
+<th valign="middle" align="left">surface semantics (i.e. roof, windows)</th>
+</tr></thead>
+<tbody><tr><td valign="middle" align="left">Urban Plan Communication</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">not required</td>
+</tr><tr><td valign="middle" align="left">Comprehensive Planning</td>
+<td valign="middle" align="left">benefitial</td>
+<td valign="middle" align="left">not required</td>
+</tr><tr><td valign="middle" align="left">Sight Analysis</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">not required</td>
+</tr><tr><td valign="middle" align="left">Shadow Analysis</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">not required</td>
+</tr><tr><td valign="middle" align="left">Solar Potential Estimation</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">benefitial</td>
+</tr><tr><td valign="middle" align="left">Daylight Simulation</td>
+<td valign="middle" align="left">optional</td>
+<td valign="middle" align="left">required</td>
+</tr><tr><td valign="middle" align="left">Noise Simulation</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">optional</td>
+</tr><tr><td valign="middle" align="left">Flood Simulation</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">optional</td>
+</tr><tr><td valign="middle" align="left">Urban Climate Indicators</td>
+<td valign="middle" align="left">not required</td>
+<td valign="middle" align="left">optional</td>
+</tr><tr><td valign="middle" align="left">Indoor Wayfinding (First Response)</td>
+<td valign="middle" align="left">required</td>
+<td valign="middle" align="left">not required</td>
+</tr><tr><td valign="middle" align="left">Facility Management</td>
+<td valign="middle" align="left">required</td>
+<td valign="middle" align="left">not required</td>
+</tr><tr><td valign="middle" align="left">3D Cadastre</td>
+<td valign="middle" align="left">required</td>
+<td valign="middle" align="left">not required</td>
+</tr></tbody>
+</table>
+</clause>
+</clause>
+
+<clause id="_conclusion_qualitative" obligation="normative">
+<title>Conclusion (Qualitative)</title>
+<ul id="_e978de38-0b28-0303-2e7b-551df73610e9"><li><p id="_149b8ca4-d7d6-c8e3-e9e1-521381d7f6e3">Buildings ist most used Module in the CityGML Data Model for 3DCIM applications</p>
+</li>
+<li><p id="_2aa9f5a5-28e2-0c1c-cbe8-4fd89d312916">2nd Level Building features (Rooms, Storey) are not yet widely used in practice, but cities are planning to use it and use cases have been described</p>
+</li>
+<li><p id="_3b4e6757-e7e0-7bac-a47d-a6e682cb7d4c">Semantic Surface Information (especially “windows”) are required for certain Simulation applications and improve the results of others. However, currently most existing 3D city models do not contain semantic information on surfaces. Some models do differentiate between “Roofs” and “Walls”, but not “windows”. This is mostly due to the fact that aquiring this information requires either a semantically correct BIM model as a source (for newer buildling), or an established workflow to derive this information from other sources (i.e. photogrammetry, street images)</p>
+</li>
+<li><p id="_cd2ca0d9-042d-24b2-a403-60f45942d8da">Some use cases require information that are usually stored in dedicated systems, (i.e. traffic, demographics), rather than maintaining a semantically thick data motdel, real world applications suggest the use of external references</p>
+</li>
+<li><p id="_cbf43b33-7267-0928-13f7-4dfcad16c676">Simulation which requires surface semantics often requires specific file format as input, hence a convertion is needed</p>
+</li>
+</ul>
+
+<p id="_ed9929d4-2614-a54c-a5ad-f90a8254bbdd">→ show diagram, sources</p>
+
+<p id="_e795a905-6afa-1774-d095-504bc6077b70">Summary of Requirements as a Table</p>
+</clause>
+
+<clause id="_clause_containing_normative_material_minimal_profile" obligation="normative">
+<title>Clause containing normative material — Minimal Profile</title>
+<clause id="_modules" obligation="normative">
+<title>Modules</title>
+<p id="_340c9c85-913b-d853-0b91-119147d24976">The CityGML Best Practice Guidance document provides an overview of how various CityGML modules align with the CityGML Standard.</p>
+
+<p id="_084d96e2-3ffd-3df4-e661-a747ec36c0c8">CityGML encompasses several modules. The overall CityGML data model is thematically decomposed into a CityGML core module and extension modules. Each module is defined within its own globally unique XML namespace. Due to this modularization approach, there are various versions of valid CityGML documents are not valid CityGML 1.0.0 instance documents. As a result the Best Practice Guidance documents details varying levels of support:</p>
+
+<ul id="_d77d5c84-2b3b-7bb2-9706-6559cdfd97c8"><li><p id="_18bb454f-d782-f601-7bd4-abd833d93c19"><strong>Core CityGML Module</strong>: This module is partially supported due to the implementation challenges associated with NURBS and ExternalReferences, which contribute to fragmentation. Due to the challenges to implement, Implicit Geometries are not supported.</p>
+</li>
+<li><p id="_9915bba9-f69c-e67b-4a5b-7bd6fea02e25"><strong>Appearance Module</strong>: Support is partial because it does not accommodate the TexCoordGen class, which requires UV coordinates in texture files.</p>
+</li>
+<li><p id="_044c6f61-54a6-8d28-ad79-e8bf51d3eec6"><strong>Fully Supported Modules</strong>: The following modules are fully supported: Bridge, Building, CityFurniture, Construction, Generics, LandUse, Transportation, Tunnel, Vegetation, and WaterBody.</p>
+</li>
+<li><p id="_731b1bb0-5e72-fd7c-36ca-490c317a8fdb"><strong>CityObjectGroup Module</strong>: This module is partially supported. It supports groups of City Objects but does not extend to sub-groups, such as walls within a building.</p>
+</li>
+<li><p id="_b8eceac5-2707-ed69-a211-f8f52af61f42"><strong>Unsupported Modules</strong>: The following modules are not supported:</p>
+</li>
+<li><p id="_f5ef347f-95e6-cf60-771d-bb8f5066f008"><strong>Dynamizer</strong>: Issues include the lack of support for semantically thin Dynamizer systems.</p>
+</li>
+<li><p id="_0840f127-07fc-ad40-2027-31b1b573eb9e"><strong>PointCloud</strong>: No current support is provided.</p>
+</li>
+<li><p id="_a45f0810-4836-87ad-447f-d18468e63c45"><strong>Tin</strong>: Support is impractical due to constraints with Delaunay triangulation.</p>
+</li>
+<li><p id="_36c3fdc1-28c7-06ed-164b-bd25208cb17e"><strong>RasterRelief</strong>: Only TINRelief/TriangulatedSurface is supported; alternatives for unsupported formats are suggested.</p>
+</li>
+<li><p id="_ee2ddb85-2a40-9e6c-b294-a930fc184594"><strong>Versioning</strong>: Relies on a external version control (git) or database system to handle version control</p>
+</li>
+</ul>
+
+<p id="_cd43687f-eae1-1ac8-f1b6-a98d8d7cbd8f">The document also notes that database solutions are specific, and alternative methods are recommended for formats like RasterRelief that are not supported.</p>
+
+<table id="_a363bd89-366d-3d32-5bf1-6eb396d96efb" width="90%"><thead><tr><th valign="middle" align="left">CityGML module</th>
+<th valign="middle" align="left">Included</th>
+<th valign="middle" align="left">Comment</th>
+</tr></thead>
+<tbody><tr><td valign="middle" align="left">Core</td>
+<td valign="middle" align="left">PARTIAL</td>
+<td valign="middle" align="left">NURBS are not supported, Implicit Geometries are not supported .ExternalReferences are not supported.</td>
+</tr><tr><td valign="middle" align="left">Appearance</td>
+<td valign="middle" align="left">PARTIAL</td>
+<td valign="middle" align="left">the CityGML class TexCoordGen is not supported, ie one must specify the UV coordinates in the texture files.</td>
+</tr><tr><td valign="middle" align="left">Bridge</td>
+<td valign="middle" align="left">YES</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">Building</td>
+<td valign="middle" align="left">YES</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">CityFurniture</td>
+<td valign="middle" align="left">YES</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">CityObjectGroup</td>
+<td valign="middle" align="left">PARTIAL</td>
+<td valign="middle" align="left">groups of City Objects are supported, but not groups of parts of objects (eg it is not possible to group some walls of a building together)</td>
+</tr><tr><td valign="middle" align="left">Construction</td>
+<td valign="middle" align="left">Partial</td>
+<td valign="middle" align="left">Semantic surfaces are not supported</td>
+</tr><tr><td valign="middle" align="left">Dynamizer</td>
+<td valign="middle" align="left">NO</td>
+<td valign="middle" align="left">Semantically thin, dedicated systems</td>
+</tr><tr><td valign="middle" align="left">Generics</td>
+<td valign="middle" align="left">YES</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">LandUse</td>
+<td valign="middle" align="left">YES</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">PointCloud</td>
+<td valign="middle" align="left">NO</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">Relief</td>
+<td valign="middle" align="left">No</td>
+<td valign="middle" align="left">only the TINRelief/TriangulatedSurface is supported.</td>
+</tr><tr><td valign="middle" align="left">Tin</td>
+<td valign="middle" align="left">NO</td>
+<td valign="middle" align="left">(where only elevation points and break lines are stored) is not supported since it would require viewer/applications to have a constrained Delaunay triangulator, which is problematic (especially for web-based tools). Also, it is not possible to store areas over a terrain that would support different resolutions.</td>
+</tr><tr><td valign="middle" align="left">RasterRelief</td>
+<td valign="middle" align="left">NO</td>
+<td valign="middle" align="left">is also not supported → other, better formats?</td>
+</tr><tr><td valign="middle" align="left">Transportation</td>
+<td valign="middle" align="left">TBD</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">Tunnel</td>
+<td valign="middle" align="left">TBD</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">Vegetation</td>
+<td valign="middle" align="left">YES</td>
+<td valign="middle" align="left"/></tr><tr><td valign="middle" align="left">Versioning</td>
+<td valign="middle" align="left">NO</td>
+<td valign="middle" align="left">CityJson using git based approach, Database specific solutions?</td>
+</tr><tr><td valign="middle" align="left">WaterBody</td>
+<td valign="middle" align="left">TBD</td>
+<td valign="middle" align="left"/></tr></tbody>
+</table>
+</clause>
+
+<clause id="_required_modules" obligation="normative">
+<title>Required Modules</title>
+</clause>
+
+<clause id="_optional_modules" obligation="normative">
+<title>Optional Modules</title>
+</clause>
+
+<clause id="_excluded_modules" obligation="normative">
+<title>Excluded Modules</title>
+<clause id="_building_module" obligation="normative">
+<title>Building Module</title>
+<p id="_c5a52780-59a8-26e6-2f3d-1038d6ea59b0">Applications must partially support the buildings module to comply with this profile.</p>
+
+<p id="_0de736b6-4be1-1821-53e9-d89a9ad3566d"><strong>Building &amp; Building Part</strong> Applications must support the TopLevelFeatureType “Building” as well as the FeatureType “BuildingPart”.</p>
+
+<p id="_13e9e699-d680-970e-82dc-540b50db0990"><strong>Storeys &amp; Rooms</strong> Applications may support the</p>
+
+<figure id="_6106ac7f-581b-c712-5009-f44a59df8659" width="excluded components are greyed out">
+<name>UML of Building Module</name>
+<image src="../figures/FIG3002.bmp" mimetype="image/bmp" id="_e9c83150-e898-12f6-e2a3-375f47282a96" height="auto" width="excluded components are greyed out" alt="UML of class Building"/></figure>
+
+<p id="_9d4cdbe9-b48c-d9f2-06c7-163528e4922c">Should use:</p>
+
+<p id="_cbda5cbf-e815-cadb-b13c-fcc3795e04ef">May include:</p>
+
+<p id="_489349d8-bd6c-aaee-34a4-c155a99d46f8">The [Module Name] module is not required for compliance with this profile.</p>
+
+<p id="_cedd215c-3a55-48c4-25bc-f3945b5866e2">Not included:</p>
+</clause>
+
+<clause id="_construction_module" obligation="normative">
+<title>Construction Module</title>
+<p id="_f07eb0a0-711f-6cf0-df3a-8a7e0e190dde">The support of the “Constructions”"module is not required for compliance with this profile.</p>
+
+<figure id="_ccd16d4d-626a-ab99-ed46-15f04f942a16" width="excluded components are greyed out">
+<name>UML of Construction Module</name>
+<image src="../figures/FIG3001.bmp" mimetype="image/bmp" id="_66343734-f7c6-c1d6-a990-19b83d3682e5" height="auto" width="excluded components are greyed out" alt="UML of class Construction"/></figure>
+</clause>
+</clause>
+
+<clause id="_geometry_objects" obligation="normative">
+<title>Geometry Objects</title>
+<clause id="_geometry_types" obligation="normative">
+<title>Geometry Types</title>
+<p id="_557f7b1d-16aa-5130-374e-6a61db7b2fe5">The CityGML Conceptual Model does not put any restriction on the usage of specific geometry types as defined in ISO 19107. For example, 3D surfaces could be represented in a dataset using 3D polygons or 3D meshes such as triangulated irregular networks (TINS) or by non-uniform rational B-spline surfaces (NURBS).</p>
+
+<p id="_7cbb246e-2ccb-2cc1-fe59-a2678357f3ac">In order to improve interoperability and facilitate implementation, this profile restricts to the use of 3d polygons and 3d meshes.</p>
+</clause>
+
+<clause id="_implicit_geometry" obligation="normative">
+<title>Implicit Geometry</title>
+<p id="_2231e5c9-5f57-e1b8-9fee-b2807e4e03a5">Geometry shall be explicitly defined and may not be implicit.</p>
+
+<review id="_c2b1f0d3-0759-5ad7-c1e0-6176db4c6a52" reviewer="(Unknown)" date="2025-03-03T00:00:00Z" type="todo"><p id="_15296335-42a6-4ddd-85a6-ab9c31da2247">To be discussed, makes it much harder to implement</p>
+</review></clause>
+</clause>
+
+<clause id="_crs" obligation="normative">
+<title>CRS</title>
+<p id="_9a4c6b1f-fa4f-925a-e0a2-3f97790eb0cf">All CityObjects shall use the same CRS.</p>
+
+<p id="_cfe986de-f6fe-6a00-b9de-4fafb67912a8">The coordinate reference system (CRS) shall be defined as a URL formatted according to the OGC Name Type Specification:</p>
+
+<p id="_50ee9c7f-822b-cda9-90b2-e558355cd62c"><link target="http://www.opengis.net/def/crs/{authority}/{version}/{code}"/></p>
+
+<p id="_a8df93bd-2b56-f848-79c3-49d5984a3b8a">where {authority} designates the authority responsible for the definition of this CRS (usually “EPSG” or “OGC”), and where {version} designates the specific version of the CRS (“0” (zero) is used if there is no version).</p>
+
+<p id="_1c23e0c1-fbc9-ef0f-1260-5912a4234103">A projected, cartesian coordinate system shall be used.</p>
+</clause>
+</clause>
+
+
+
+
+
+
+
+
+</sections><annex id="_conformance_class_abstract_test_suite_normative" obligation="informative">
+<title>Conformance Class Abstract Test Suite (Normative)</title>
+<note id="_49fa4119-ff23-ba00-2b10-7c6008e83cc9"><p id="_2f41c6a6-7963-8015-59ca-d74fafa8ae41">Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)</p>
+</note>
+
+<clause id="_conformance_class_a" obligation="informative">
+<title>Conformance Class A</title>
+<clause id="_requirement_1" obligation="informative">
+<title>Requirement 1</title>
+<requirement id="_f47c02ed-6861-e4d1-ef07-329750ecf0f7" model="ogc" type="pseudocode"><verification exclude="false"><dl id="_26b5e8cf-15c9-e503-c474-f92d2801893c"><dt>Test purpose</dt>
+<dd><p id="_d47d8426-5d28-1c1c-2ac5-d2cb76633cdb">Verify that…​</p>
+</dd>
+<dt>Test method</dt>
+<dd><p id="_82b50db0-7bcd-8066-e386-e61f2727f4c2">Inspect…​</p>
+</dd>
+</dl>
+</verification></requirement>
+</clause>
+
+<clause id="_requirement_2" obligation="informative">
+<title>Requirement 2</title>
+</clause>
+</clause>
+</annex><annex id="_title_normativeinformative" obligation="informative">
+<title>Title ( {Normative/Informative} )</title>
+<note id="_9c04cf83-97ee-5129-1540-d560e28d0909"><p id="_782ab42d-4816-bdd6-9432-7b67e87b5b37">Place other Annex material in sequential annexes beginning with “B” and leave final two annexes for the Revision History and Bibliography</p>
+</note>
+</annex><annex id="_revision_history" obligation="informative">
+<title>Revision History</title>
+<table id="_5afe311c-d3e8-fb9a-9455-6031fbbc3118" width="90%"><thead><tr><th valign="middle" align="left">Date</th>
+<th valign="middle" align="left">Release</th>
+<th valign="middle" align="left">Editor</th>
+<th valign="middle" align="left">Primary clauses modified</th>
+<th valign="middle" align="left">Description</th>
+</tr></thead>
+<tbody><tr><td valign="middle" align="left">2016-04-28</td>
+<td valign="middle" align="left">0.1</td>
+<td valign="middle" align="left">G. Editor</td>
+<td valign="middle" align="left">all</td>
+<td valign="middle" align="left">initial version</td>
+</tr></tbody>
+</table>
+</annex><bibliography><references id="_references" normative="true" obligation="informative">
+<title>Normative references</title><p id="_307b20e2-9e40-db56-abbf-2822ab2941cc">The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+
+
+
+
+
+<bibitem id="Smith81"><formattedref format="application/x-isodoc+xml"><em>Identification of Common Molecular Subsequences</em>.
+Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195–197 (1981)</formattedref><docidentifier>Identification of Common Molecular Subsequences</docidentifier></bibitem>
+<bibitem id="May06"><formattedref format="application/x-isodoc+xml"><em>ZIB Structure Prediction Pipeline: Composing a Complex Biological Workflow through Web Services</em>.
+May, P., Ehrlich, H.C., Steinke, T. In: Nagel, W.E., Walter,
+W.V., Lehner, W. (eds.) Euro-Par 2006. LNCS, vol. 4128, pp. 1148–1158. Springer,
+Heidelberg (2006)</formattedref><docidentifier>ZIB Structure Prediction Pipeline</docidentifier></bibitem>
+<bibitem id="Grid"><formattedref format="application/x-isodoc+xml"><em>The Grid: Blueprint for a New Computing Infrastructure.</em>,
+Foster, I., Kesselman, C.. Morgan Kaufmann, San Francisco (1999).</formattedref><docidentifier>The Grid</docidentifier></bibitem>
+<bibitem id="Czajkowski01"><formattedref format="application/x-isodoc+xml"><em>Grid Information Services for Distributed Resource Sharing.</em> 
+Czajkowski, K., Fitzgerald, S., Foster, I., Kesselman, C. In: 10th IEEE International Symposium on High
+Performance Distributed Computing, pp. 181–184. IEEE Press, New York (2001)</formattedref><docidentifier>Grid Information Services for Distributed Resource Sharing</docidentifier></bibitem>
+<bibitem id="Foster02"><formattedref format="application/x-isodoc+xml"><em>The Physiology of the Grid: an Open Grid Services Architecture for Distributed Systems Integration.</em> 
+Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Forum (2002)</formattedref><docidentifier>The Physiology of the Grid</docidentifier></bibitem>
+<bibitem id="NCBI"><formattedref format="application/x-isodoc+xml"><em>National Center for Biotechnology Information</em>, <link target="http://www.ncbi.nlm.nih.gov"/></formattedref><docidentifier>NCBI</docidentifier></bibitem>
+<bibitem id="ISO19101-1" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">Reference model</title>
+
+  
+<title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Fundamentals</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Reference model — Part 1: Fundamentals</title>
+
+  <uri type="src">https://www.iso.org/standard/59164.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:59164:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/05/91/59164.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19101-1:2014</docidentifier>
+  <docidentifier type="iso-reference">ISO 19101-1:2014(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19101:-1:stage-90.93</docidentifier>
+  <docnumber>19101</docnumber>
+  <date type="published">
+    <on>2014-11</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">ISO 19101-1:2014 defines the reference model for standardization in the field of geographic information. This reference model describes the notion of interoperability and sets forth the fundamentals by which this standardization takes place.
+Although structured in the context of information technology and information technology standards, ISO 19101-1:2014 is independent of any application development method or technology implementation approach.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>93</substage>
+  </status>
+  <copyright>
+    <from>2014</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19101:2002</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19101:2002</docidentifier>
+    </bibitem>
+
+  </relation>
+  <place>Geneva</place>
+</bibitem>
+<bibitem id="ISO19115-1" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+
+  
+<title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Fundamentals</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Metadata — Part 1: Fundamentals</title>
+
+  <uri type="src">https://www.iso.org/standard/53798.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:53798:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/05/37/53798.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19115-1:2014</docidentifier>
+  <docidentifier type="iso-reference">ISO 19115-1:2014(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19115:-1:stage-90.60</docidentifier>
+  <docnumber>19115</docnumber>
+  <date type="published">
+    <on>2014-04</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">ISO 19115-1:2014 defines the schema required for describing geographic information and services by means of metadata. It provides information about the identification, the extent, the quality, the spatial and temporal aspects, the content, the spatial reference, the portrayal, distribution, and other properties of digital geographic data and services.
+ISO 19115-1:2014 is applicable to:
+-the cataloguing of all types of resources, clearinghouse activities, and the full description of datasets and services;
+-geographic services, geographic datasets, dataset series, and individual geographic features and feature properties.
+ISO 19115-1:2014 defines:
+-mandatory and conditional metadata sections, metadata entities, and metadata elements;
+-the minimum set of metadata required to serve most metadata applications (data discovery, determining data fitness for use, data access, data transfer, and use of digital data and services);
+-optional metadata elements to allow for a more extensive standard description of resources, if required;
+-a method for extending metadata to fit specialized needs.
+Though ISO 19115-1:2014 is applicable to digital data and services, its principles can be extended to many other types of resources such as maps, charts, and textual documents as well as non-geographic data. Certain conditional metadata elements might not apply to these other forms of data.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>60</substage>
+  </status>
+  <copyright>
+    <from>2014</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115:2003</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115:2003/Cor 1:2006</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115:2003/Cor 1:2006</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115-1:2014/Amd 1:2018</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115-1:2014/Amd 1:2018</docidentifier>
+      <date type="circulated">
+        <on>2024-09-03</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19115-1:2014/Amd 2:2020</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19115-1:2014/Amd 2:2020</docidentifier>
+      <date type="circulated">
+        <on>2024-09-03</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <place>Geneva</place>
+</bibitem>
+<bibitem id="ISO19157" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information </title>
+
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">Data quality</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">Geographic information  — Data quality</title>
+
+  <uri type="src">https://www.iso.org/standard/32575.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:32575:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/03/25/32575.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19157:2013</docidentifier>
+  <docidentifier type="iso-reference">ISO 19157:2013(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19157:stage-90.92</docidentifier>
+  <docnumber>19157</docnumber>
+  <date type="published">
+    <on>2013-12</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">﻿
+ISO 19157:2013 establishes the principles for describing the quality of geographic data. It
+-   defines components for describing data quality;
+-   specifies components and content structure of a register for data quality measures;
+-   describes general procedures for evaluating the quality of geographic data;
+-   establishes principles for reporting data quality.
+ISO 19157:2013 also defines a set of data quality measures for use in evaluating and reporting data quality. It is applicable to data producers providing quality information to describe and assess how well a data set conforms to its product specification and to data users attempting to determine whether or not specific geographic data are of sufficient quality for their particular application.
+ISO 19157:2013 does not attempt to define minimum acceptable levels of quality for geographic data.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>92</substage>
+  </status>
+  <copyright>
+    <from>2013</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19113:2002</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19113:2002</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19114:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19114:2003</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/TS 19138:2006</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/TS 19138:2006</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19157-1:2023</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19157-1:2023</docidentifier>
+      <date type="circulated">
+        <on>2023-06-08</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO 19157:2013/Amd 1:2018</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19157:2013/Amd 1:2018</docidentifier>
+      <date type="circulated">
+        <on>2023-06-08</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <place>Geneva</place>
+</bibitem>
+<bibitem id="ISO19139" type="standard">
+<title format="text/plain">Geographic information — Metadata — XML schema implementation</title>
+<docidentifier type="ISO">ISO 19139:2007</docidentifier><docnumber>19139</docnumber><date type="published"><on>2007</on></date><contributor><role type="publisher"/><organization>
+<name>ISO</name>
+</organization></contributor></bibitem>
+<bibitem id="ISO19115-3" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+
+  
+<title type="title-part" format="text/plain" language="en" script="Latn">Part 3: XML schema implementation for fundamental concepts</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts</title>
+
+  <uri type="src">https://www.iso.org/standard/80874.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:80874:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/08/08/80874.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19115-3</docidentifier>
+  <docidentifier type="iso-reference">ISO 19115-3(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19115:-3:stage-60.60</docidentifier>
+  <docnumber>19115</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>60</stage>
+    <substage>60</substage>
+  </status>
+  <copyright>
+    <from>2023</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/TS 19115-3:2016</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/TS 19115-3:2016</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      <fetched>2025-03-03</fetched>
+      
+<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+
+      
+<title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+
+      
+<title type="title-part" format="text/plain" language="en" script="Latn">Part 3: XML schema implementation for fundamental concepts</title>
+
+      
+<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts</title>
+
+      <uri type="src">https://www.iso.org/standard/80874.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:80874:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/08/08/80874.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19115-3:2023</docidentifier>
+      <docidentifier type="iso-reference">ISO 19115-3:2023(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19115:-3:stage-60.60</docidentifier>
+      <docnumber>19115</docnumber>
+      <date type="published">
+        <on>2023-08</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <edition>1</edition>
+      <language>en</language>
+      <language>fr</language>
+      <script>Latn</script>
+      <abstract format="text/plain" language="en" script="Latn">This document defines an integrated XML implementation of ISO 19115-1 and ISO 19115-2 by defining the following artefacts:
+—     a set of XML schema required to validate metadata instance documents conforming to conceptual model elements defined in ISO 19115-1 and ISO 19115-2; and
+—     a set of ISO/IEC 19757-3 (Schematron) rules that implement validation constraints in the ISO 19115-1 and ISO 19115-2 UML models that are not validated by the XML schema.
+This document describes the procedure used to generate XML schemas from ISO geographic information conceptual models related to metadata. The XML schemas are generated directly from the conceptual UML model (8.5).</abstract>
+      <status>
+        <stage>60</stage>
+        <substage>60</substage>
+      </status>
+      <copyright>
+        <from>2023</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletes">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/TS 19115-3:2016</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/TS 19115-3:2016</docidentifier>
+        </bibitem>
+
+      </relation>
+      <place>Geneva</place>
+    </bibitem>
+
+  </relation>
+  <place>Geneva</place>
+</bibitem>
+<bibitem id="OGC15-097" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">OGC® Geospatial User Feedback Standard: Conceptual Model</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">OGC® Geospatial User Feedback Standard: Conceptual Model</title>
+
+  <uri type="src">http://www.opengis.net/doc/IS/guf-conceptual/1.0.0</uri>
+  <uri type="obp">https://docs.ogc.org/is/15-097r1/15-097r1.html</uri>
+  <docidentifier type="OGC" primary="true">15-097r1</docidentifier>
+  <date type="published">
+    <on>2016-12-22</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Joan Masó and Lucy Bastin </completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>Open Geospatial Consortium</name>
+
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This standard defines a conceptual Geospatial User Feedback (GUF) data model. Geospatial User Feedback is metadata that is predominantly produced by the consumers of geospatial data products as they use and gain experience with those products. This standard complements existing metadata conventions whereby documents recording dataset characteristics and production workflows are generated by the creator, publisher or curator of a data product. As a part of metadata, the GUF data model reuses some elements of ISO 19115-1:2014 (the updated version of the OGC Abstract Specification Topic 11) but not the general structure. This selective use of ISO metadata elements prioritizes future interoperability with developing ISO metadata models. This standard is designed to be used combination with an encoding standard. Initially an XML encoding following the ISO 19139 encoding rules is specified in a separate OGC implementation standard (OGC 15-098). In the future other encodings may be defined, including examples such as the use of JSON-LD based on parts of schema.org.</abstract>
+  
+</bibitem>
+<bibitem id="OGC12-019" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">OGC City Geography Markup Language (CityGML) Encoding Standard</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">OGC City Geography Markup Language (CityGML) Encoding Standard</title>
+
+  <uri type="src">http://www.opengis.net/spec/citygml/2.0</uri>
+  <uri type="obp">https://portal.ogc.org/files/?artifact_id=47842</uri>
+  <docidentifier type="OGC" primary="true">12-019</docidentifier>
+  <date type="published">
+    <on>2012-04-04</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Gerhard Gröger</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Thomas H. Kolbe</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Claus Nagel</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Karl-Heinz Häfele</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>Open Geospatial Consortium</name>
+
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">CityGML is an open data model and XML-based format for the storage and exchange of virtual 3D city models. It is an application schema for the Geography Markup Language version 3.1.1 (GML3), the extendible international standard for spatial data exchange issued by the Open Geospatial Consortium (OGC) and the ISO TC211.
+
+The aim of the development of CityGML is to reach a common definition of the basic entities, attributes, and relations of a 3D city model. This is especially important with respect to the cost-effective sustainable maintenance of 3D city models, allowing the reuse of the same data in different application fields.</abstract>
+  
+</bibitem>
+<bibitem id="OGC14-005r3" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">OGC® IndoorGML</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">OGC® IndoorGML</title>
+
+  <uri type="src">http://www.opengis.net/doc/IS/indoorgml/1.0.0</uri>
+  <uri type="obp">https://docs.ogc.org/is/14-005r3/14-005r3.html</uri>
+  <docidentifier type="OGC" primary="true">14-005r3</docidentifier>
+  <date type="published">
+    <on>2014-12-02</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Jiyeong Lee</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Ki-Joune Li</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Sisi Zlatanova</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Thomas H. Kolbe</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Claus Nagel</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Thomas Becker</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>Open Geospatial Consortium</name>
+
+    </organization>
+  </contributor>
+  <edition>3</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This OGC® IndoorGML standard specifies an open data model and XML schema for indoor spatial information. IndoorGML is an application schema of OGC® GML 3.2.1. While there are several 3D building modelling standards such as CityGML, KML, and IFC, which deal with interior space of buildings from geometric, cartographic, and semantic viewpoints, IndoorGML intentionally focuses on modelling indoor spaces for navigation purposes.</abstract>
+  
+</bibitem>
+<bibitem id="OGC06121r9" type="standard" schema-version="v1.2.9">
+  <fetched>2025-03-03</fetched>
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">OGC Web Service Common Implementation Specification</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">OGC Web Service Common Implementation Specification</title>
+
+  <uri type="src"/>
+  <uri type="obp">https://portal.ogc.org/files/?artifact_id=38867</uri>
+  <docidentifier type="OGC" primary="true">06-121r9</docidentifier>
+  <date type="published">
+    <on>2010-04-07</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Arliss Whiteside Jim Greenwood </completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>Open Geospatial Consortium</name>
+
+    </organization>
+  </contributor>
+  <edition>9</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This document specifies many of the aspects that are, or should be, common to all or multiple OGC Web Service (OWS) interface Implementation Standards. These common aspects are primarily some of the parameters and data structures used in operation requests and responses. Of course, each such Implementation Standard must specify the additional aspects of that interface, including specifying all additional parameters and data structures needed in all operation requests and responses.</abstract>
+  
+</bibitem>
+</references><references id="Bibliography" normative="false" obligation="informative">
+<title>Bibliography</title>
+<note id="_3759b87c-ca5a-511b-57d2-cef257dc301a"><p id="_5012d6fe-7d08-d5fa-d354-94474ecd68c5">The TC has approved Springer LNCS as the official document citation type.</p>
+
+<p id="_4b95e711-c35f-134f-4850-3e819a15ddb0">Springer LNCS is widely used in technical and computer science journals and other publications</p>
+
+
+<p id="_91991dd8-2854-d4d4-c3b7-71e34448cc8e">– Actual References:</p>
+
+<p id="_a19eddb1-f343-b2d8-fb7c-28a962268999">[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)</p>
+</note><bibitem id="OGC2015">
+  <formattedref format="application/x-isodoc+xml"><em>OGC: OGC Testbed 12 Annex B: Architecture</em> (2015).</formattedref>
+  <docidentifier>OGCTB12</docidentifier>
+  <docnumber>12</docnumber>
+</bibitem>
+
+
+</references></bibliography>
+</ogc-standard>
