@@ -85,7 +85,7 @@ image::./figures/UML_Bridge.bmp[UML of class Bridge, excluded components are gre
 [.figure,width=full-page-width]
 ====
 image::./figures/UML_Vegetation.bmp[UML of class Vegetion, not required components are greyed out]
-===
+====
 
 ==== CityFurniture Module
 

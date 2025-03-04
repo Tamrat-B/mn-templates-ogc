@@ -58,8 +58,8 @@ org.apache.fop.fo.expr.PropertyException: null:664:193: No conversion defined ex
 	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
 	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
 
-Invalid property value encountered in content-width="not required components are greyed out": org.apache.fop.fo.expr.PropertyException: null:669:305: No conversion defined not required components are greyed out; property:'content-width' (See position 669:603)
-org.apache.fop.fo.expr.PropertyException: null:669:305: No conversion defined not required components are greyed out; property:'content-width'
+Invalid property value encountered in content-width="not required components are greyed out": org.apache.fop.fo.expr.PropertyException: null:669:193: No conversion defined not required components are greyed out; property:'content-width' (See position 669:491)
+org.apache.fop.fo.expr.PropertyException: null:669:193: No conversion defined not required components are greyed out; property:'content-width'
 	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
 	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
 	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
@@ -88,8 +88,8 @@ org.apache.fop.fo.expr.PropertyException: null:669:305: No conversion defined no
 	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
 	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
 
-Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:687:81: No conversion defined excluded components are greyed out; property:'content-width' (See position 687:379)
-org.apache.fop.fo.expr.PropertyException: null:687:81: No conversion defined excluded components are greyed out; property:'content-width'
+Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:699:81: No conversion defined excluded components are greyed out; property:'content-width' (See position 699:379)
+org.apache.fop.fo.expr.PropertyException: null:699:81: No conversion defined excluded components are greyed out; property:'content-width'
 	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
 	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
 	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
@@ -121,26 +121,33 @@ org.apache.fop.fo.expr.PropertyException: null:687:81: No conversion defined exc
 The contents of fo:region-body on page 31 exceed its viewport by 531050 millipoints. (See position 1:2006)
 The contents of fo:region-body on page 28 exceed its viewport by 238092 millipoints. (See position 1:2006)
 The contents of fo:region-body on page 27 exceed its viewport by 781518 millipoints. (See position 1:2006)
+Content overflows the viewport of an fo:block-container in inline-progression direction by 23521 millipoints. (See position 820:3617)
 PDF isn't valid PDF/UA-1:
-ValidationResult [flavour=ua1, totalAssertions=197430, assertions=[
+ValidationResult [flavour=ua1, totalAssertions=220294, assertions=[
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[3](1906 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[3](2434 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[4](1911 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[4](2439 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[6](1934 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[5](2444 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[7](1939 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[7](2467 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[8](1944 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[8](2472 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[9](1949 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[9](2477 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[11](1980 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null]], isCompliant=false]
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[10](2482 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
+message=TOCI element should be contained in TOC element,
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[11](2487 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
+message=TOCI element should be contained in TOC element,
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](60 0 obj SEDocument Document)/K[2](185 0 obj SEPart Part)/K[0](1978 0 obj SESect Sect)/K[1](4618 0 obj SEDiv Div)/K[0](4673 0 obj SEDiv Div)/K[13](2518 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null]], isCompliant=false]
