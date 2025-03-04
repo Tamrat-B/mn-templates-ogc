@@ -38,58 +38,87 @@ The document also notes that database solutions are specific, and alternative me
 
 
 
-=== Required Modules
+=== Required / Recommended Modules
 
 
 
 
 ==== Building Module
 
-Applications must partially support the buildings module to comply with this profile.
+Applications must partially support the buildings module to comply with this Best Practice.
 
 
-Recommended classes:
+**Required classes:**
 
-**Building & Building Part**
+* **Building & Building Part**
 Applications shall support the TopLevelFeatureType "Building" as well as the FeatureType "BuildingPart".
 
 
-**Storeys & Rooms**
-Applications may support the FeatureTypes "BuildingRoom", "BuildingUnit" and "Storeys"
+* **Storeys & Rooms**
+Applications shall support the FeatureTypes "BuildingRoom", "BuildingUnit" and "Storeys"
 
 
-Not recommended classes:
+**Optional classes:**
 
-**Building Installation & Furniture**
+* **Building Installation & Furniture**
 Applications may support the FeatureTypes "BuildingInstallation", "BuildingUnit" and "Storeys"
 
 
-**Constructive Elements**
-Applications may support the FeatureTypes "BuildingContructiveElements", 
+* **Constructive Elements**
+Applications may support the FeatureTypes "BuildingContructiveElements"
+
+-> better to use alternatives/ifc 
+-> no use cases that warrent the query of individual surfaces / constructive elements accross city
 
 
 
 
 .UML of Building Module
-image::./figures/FIG3002.bmp[UML of class Building, excluded components are greyed out]
+image::./figures/FIG3002.bmp[text-width]
 
 
 
 ==== Bridge Module
-image::./figures/UML_Bridge.bmp[UML of class Bridge, excluded components are greyed out]
+.UML of Bridge module, excluded components are greyed ou
+image::./figures/UML_Bridge.bmp[text-width]
 
 
 
 
 ==== Vegetation Module
-[.figure,width=full-page-width]
-====
-image::./figures/UML_Vegetation.bmp[UML of class Vegetion, not required components are greyed out]
-====
+
+Applications shall support the vegetation module to comply with this Best Practice.
+
+
+.UML of class Vegetion, not required components are greyed out
+image::./figures/UML_Vegetation.bmp[text-width]
+
+
 
 ==== CityFurniture Module
 
 
+==== Construction Module
+The support of the "Constructions""module is not required for compliance with this Best Practice.
+However, due to the inhertiance of abstract construction classes, it is required...
+
+
+**Required classes:**
+
+* **AbstractCostruction**
+Applications may support the FeatureTypes "AbstractConstruction" and "OtherConstruction"
+
+
+
+
+**Not required classes**
+
+* **AbstractConstructionSurfaces**
+Applications may support the...
+
+
+.UML of Construction Module
+image::./figures/FIG3002.bmp[text-width]
 
 
 
@@ -97,21 +126,16 @@ image::./figures/UML_Vegetation.bmp[UML of class Vegetion, not required componen
 
 ==== Tunnel Module
 .UML of Tunnel Module
-image::./figures/UML_Tunnel.bmp[height=150]
+image::./figures/UML_Tunnel.bmp[text-width]
 
 
-==== Construction Module
-The support of the "Constructions""module is not required for compliance with this profile.
 
--> better to use alternatives/ifc 
--> no use cases that warrent the query of individual surfaces / constructive elements accross city
 
-==== Construction Module
+==== CityObjectGroup Module
 The support of the "CityObjectGroup""module is not required for compliance with this best practice.
 
 
-.UML of Construction Module
-image::./figures/FIG3001.bmp[UML of class Construction, excluded components are greyed out]
+
 
 
 ==== Relief
@@ -124,8 +148,6 @@ image::./figures/FIG3001.bmp[UML of class Construction, excluded components are 
 ==== Land Use
 
 ==== Water Body
-
-==== Tunnel Module
 
 ==== Generics Module
 
@@ -140,7 +162,7 @@ The support of the "Constructions""module is not required for compliance with th
 -> alternatives way of storing textures?? also reality meshes
 
 
-=== Excluded Modules
+=== Excluded / Not Recommended Modules
 Excluded from this profile. The following modules are not considered in the context of this best practice document.
 
 ==== Versioning

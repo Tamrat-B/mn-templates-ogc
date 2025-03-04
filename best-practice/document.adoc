@@ -14,11 +14,11 @@
 :comment: ### Internal reference number; mandatory
 :docnumber: 24-999
 :comment: ### Date on which the standard was updated; mandatory
-:received-date: 2024-08-28
+:received-date: 2025-08-01
 :comment: ### Date on which the standard was approved by the issuing authority; mandatory
-:issued-date: 2024-08-28
+:issued-date: 2025-08-01
 :comment: ### Date on which the standard was published; mandatory
-:published-date: 2024-08-28
+:published-date: 2025-08-01
 :comment: ### Author one
 :fullname: Tamrat Belayneh, Esri
 :comment: ### Author one

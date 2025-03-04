@@ -1,6 +1,6 @@
 <bibdata type="standard">
 <title language="en" format="text/plain">OGC CityGML Implementation Guidance (Best Practice)</title>
-<uri type="xml">./document.xml</uri><uri type="pdf">./document.pdf</uri><uri type="doc">./document.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/BP/city_gml_best_practices/0.1</docidentifier><docidentifier type="ogc-internal" primary="true">24-999</docidentifier><docnumber>24-999</docnumber><date type="published"><on>2024-08-28</on></date><date type="issued"><on>2024-08-28</on></date><date type="received"><on>2024-08-28</on></date><contributor><role type="author"/><organization>
+<uri type="xml">./document.xml</uri><uri type="pdf">./document.pdf</uri><uri type="doc">./document.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/BP/city_gml_best_practices/0.1</docidentifier><docidentifier type="ogc-internal" primary="true">24-999</docidentifier><docnumber>24-999</docnumber><date type="published"><on>2025-08-01</on></date><date type="issued"><on>2025-08-01</on></date><date type="received"><on>2025-08-01</on></date><contributor><role type="author"/><organization>
 <name>Esri</name>
 </organization></contributor><contributor><role type="author"/><organization>
 <name>HFT</name>
