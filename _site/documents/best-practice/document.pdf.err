@@ -1,5 +1,5 @@
-Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:590:81: No conversion defined excluded components are greyed out; property:'content-width' (See position 590:375)
-org.apache.fop.fo.expr.PropertyException: null:590:81: No conversion defined excluded components are greyed out; property:'content-width'
+Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:659:81: No conversion defined excluded components are greyed out; property:'content-width' (See position 659:375)
+org.apache.fop.fo.expr.PropertyException: null:659:81: No conversion defined excluded components are greyed out; property:'content-width'
 	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
 	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
 	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
@@ -28,8 +28,8 @@ org.apache.fop.fo.expr.PropertyException: null:590:81: No conversion defined exc
 	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
 	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
 
-Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:595:193: No conversion defined excluded components are greyed out; property:'content-width' (See position 595:485)
-org.apache.fop.fo.expr.PropertyException: null:595:193: No conversion defined excluded components are greyed out; property:'content-width'
+Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:664:193: No conversion defined excluded components are greyed out; property:'content-width' (See position 664:485)
+org.apache.fop.fo.expr.PropertyException: null:664:193: No conversion defined excluded components are greyed out; property:'content-width'
 	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
 	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
 	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
@@ -58,8 +58,8 @@ org.apache.fop.fo.expr.PropertyException: null:595:193: No conversion defined ex
 	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
 	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
 
-Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:600:193: No conversion defined excluded components are greyed out; property:'content-width' (See position 600:485)
-org.apache.fop.fo.expr.PropertyException: null:600:193: No conversion defined excluded components are greyed out; property:'content-width'
+Invalid property value encountered in content-width="not required components are greyed out": org.apache.fop.fo.expr.PropertyException: null:669:305: No conversion defined not required components are greyed out; property:'content-width' (See position 669:603)
+org.apache.fop.fo.expr.PropertyException: null:669:305: No conversion defined not required components are greyed out; property:'content-width'
 	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
 	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
 	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
@@ -88,8 +88,8 @@ org.apache.fop.fo.expr.PropertyException: null:600:193: No conversion defined ex
 	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
 	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
 
-Invalid property value encountered in content-width="not required components are greyed out": org.apache.fop.fo.expr.PropertyException: null:605:193: No conversion defined not required components are greyed out; property:'content-width' (See position 605:491)
-org.apache.fop.fo.expr.PropertyException: null:605:193: No conversion defined not required components are greyed out; property:'content-width'
+Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:687:81: No conversion defined excluded components are greyed out; property:'content-width' (See position 687:379)
+org.apache.fop.fo.expr.PropertyException: null:687:81: No conversion defined excluded components are greyed out; property:'content-width'
 	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
 	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
 	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
@@ -118,67 +118,29 @@ org.apache.fop.fo.expr.PropertyException: null:605:193: No conversion defined no
 	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
 	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
 
-Invalid property value encountered in content-width="excluded components are greyed out": org.apache.fop.fo.expr.PropertyException: null:626:81: No conversion defined excluded components are greyed out; property:'content-width' (See position 626:379)
-org.apache.fop.fo.expr.PropertyException: null:626:81: No conversion defined excluded components are greyed out; property:'content-width'
-	at org.apache.fop.fo.properties.PropertyMaker.make(PropertyMaker.java:446)
-	at org.apache.fop.fo.PropertyList.convertAttributeToProperty(PropertyList.java:503)
-	at org.apache.fop.fo.PropertyList.addAttributesToList(PropertyList.java:387)
-	at org.apache.fop.fo.FObj.processNode(FObj.java:129)
-	at org.apache.fop.fo.FOTreeBuilder$MainFOHandler.startElement(FOTreeBuilder.java:321)
-	at org.apache.fop.fo.FOTreeBuilder$2.run(FOTreeBuilder.java:185)
-	at org.apache.fop.fo.FOTreeBuilder$2.run(FOTreeBuilder.java:182)
-	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-	at org.apache.fop.fo.FOTreeBuilder.startElement(FOTreeBuilder.java:181)
-	at org.apache.xalan.transformer.TransformerIdentityImpl.startElement(TransformerIdentityImpl.java:1120)
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
-	at org.apache.xalan.transformer.TransformerIdentityImpl.transform(TransformerIdentityImpl.java:519)
-	at org.metanorma.fop.PDFGenerator.generateFOPIntermediateFormat(PDFGenerator.java:830)
-	at org.metanorma.fop.PDFGenerator.runFOP(PDFGenerator.java:545)
-	at org.metanorma.fop.PDFGenerator.convertmn2pdf(PDFGenerator.java:489)
-	at org.metanorma.fop.PDFGenerator.process(PDFGenerator.java:320)
-	at org.metanorma.fop.mn2pdf.main(mn2pdf.java:338)
-
-The contents of fo:region-body on page 29 exceed its viewport by 531050 millipoints. (See position 1:2006)
-The contents of fo:region-body on page 26 exceed its viewport by 227593 millipoints. (See position 1:2006)
-The contents of fo:region-body on page 25 exceed its viewport by 238092 millipoints. (See position 1:2006)
-The contents of fo:region-body on page 24 exceed its viewport by 781518 millipoints. (See position 1:2006)
-Content overflows the viewport of an fo:block-container in inline-progression direction by 23521 millipoints. (See position 742:3617)
+The contents of fo:region-body on page 31 exceed its viewport by 531050 millipoints. (See position 1:2006)
+The contents of fo:region-body on page 28 exceed its viewport by 238092 millipoints. (See position 1:2006)
+The contents of fo:region-body on page 27 exceed its viewport by 781518 millipoints. (See position 1:2006)
 PDF isn't valid PDF/UA-1:
-ValidationResult [flavour=ua1, totalAssertions=188054, assertions=[
+ValidationResult [flavour=ua1, totalAssertions=197430, assertions=[
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[3](2440 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[3](1906 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[4](2445 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[4](1911 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[5](2450 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[6](1934 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[7](2473 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[7](1939 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[8](2478 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[8](1944 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[9](2483 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[9](1949 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
 TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
 message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[10](2488 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
-TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
-message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[11](2493 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null], 
-TestAssertion [ruleId=RuleId [specification=ISO 14289-1:2014, clause=7.2, testNumber=26], status=failed,
-message=TOCI element should be contained in TOC element,
-location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](57 0 obj SEDocument Document)/K[2](178 0 obj SEPart Part)/K[0](1985 0 obj SESect Sect)/K[1](4529 0 obj SEDiv Div)/K[0](4588 0 obj SEDiv Div)/K[13](2524 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null]], isCompliant=false]
+location=Location [level=CosDocument, context=root/document[0]/StructTreeRoot[0](4 0 obj PDStructTreeRoot)/K[0](52 0 obj SEDocument Document)/K[2](157 0 obj SEPart Part)/K[0](1518 0 obj SESect Sect)/K[1](3606 0 obj SEDiv Div)/K[0](3646 0 obj SEDiv Div)/K[11](1980 0 obj SETOCI TOCI)], locationContext=null, errorMessage=null]], isCompliant=false]

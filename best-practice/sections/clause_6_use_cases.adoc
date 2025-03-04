@@ -1,18 +1,21 @@
 [obligation=informative]
-== Real World Use Cases / Applications
-This section describes common real world use cases (used in practice or planned for) for the use of Urban Digital Twins Profile by cities and planning authorities.
-These Use Cases also serve as a basis for the subset definition of the profile.
+== Real World Use Cases / Applications (informative)
+This section describes common real world use cases (used in practice or planned for) for the use of this best practice profile by cities and planning authorities.
 
-=== Planning
+=== Urban Planning & Design
 
 //==== Building Permit Process
 
 
 ==== Urban Plan Communication
+Communicating new developments and masterplans to the public.
 
 
-Required: Buildings
-Benefitial: High LODs, Textures
+Required Modules: Buildings
+
+Benefititial Modules: Appearance
+
+LOD: High
 
 
 
@@ -24,10 +27,18 @@ SOR of planned projects
 Manage KPIs such as GFA Mix, FAR etc.
 
 
-Requires: Status of Projects, Units, Storeys
+To guide the long-term development of urban areas, balancing land use, infrastructure, and environmental sustainability.
+To assess and optimize the spatial arrangement of residential, commercial, industrial, and recreational areas, as well as transportation networks, utilities, and green spaces.
+In urban planning, the focus is on developing strategies to manage the growth and development of cities in a way that meets the needs of current and future populations while ensuring environmental sustainability. This involves comprehensive planning of land use, zoning, transportation, and the integration of various urban systems. The use of 3D models aids planners in visualizing the entire urban environment, understanding how different components interact, and simulating potential outcomes of different planning scenarios. This allows for informed decision-making and helps in balancing competing needs like housing, infrastructure, and green space.
 
-Required Modules: Buildings, Construction
-Optional Modules: 
+Relevant thematic modules in CityGML for this use case include:
+
+Building (for the visualization and analysis of existing and planned buildings, their heights, densities, and potential land use)
+LandUse (to manage and plan the zoning of different areas for residential, commercial, industrial, and recreational purposes)
+Transportation (to model transportation networks, including roads, railways, and public transport systems, supporting planning of efficient movement and connectivity)
+Relief (to incorporate topography and terrain data, which influences planning decisions related to construction, drainage, and infrastructure)
+Vegetation (to plan and integrate green spaces, parks, and tree coverage within urban areas, promoting sustainability and enhancing quality of life)
+CityFurniture (to plan the placement of urban elements such as benches, lighting, and public facilities that improve the livability of spaces)
 
 
 === Simulation & Analysis
@@ -75,7 +86,7 @@ For performance benefits, a lower LOD of the city model is usually preferred.
 → requires semantic information about hard vs soft surfaces
 → requires informatio about speed limit etc on street → external reference
 
-Relevant Modules: Building, Vegetation, Transport, CityFurniture (Walls)
+Relevant Modules: Building, Vegetation, Transport, CityFurniture (Walls), Relief?
 Relevant Properties: Acoustic Surface Properties
 
 [TODO]
@@ -96,7 +107,7 @@ While the simulation could theoretically be ran on a 3D City Model, the common h
 These are in practice derived from a rasterized top view of the 3D objects (i.e. Buildings) combined with a DTM and (if applicable) additional raster layers describing surface coverage and permeability.
 
 
-Required Modules: Building, CityFurniture
+Required Modules: Building, CityFurniture, Relief
 Optional Modules: Vegetation
 
 
@@ -105,17 +116,86 @@ Optional Modules: Vegetation
 ==== Urban Climate Indicators
 
 
+This use case is commonly applied in urban design and planning to understand the environmental effects of urban form, building materials, vegetation, and street layout. The simulation typically models how elements like building density, orientation, and green spaces influence the local microclimate, such as heat distribution, airflow, and sunlight exposure. By analyzing the interaction between buildings and the surrounding environment, urban planners can identify areas susceptible to overheating, poor air circulation, or uncomfortable wind conditions, enabling them to design more climate-resilient urban spaces.
 
-==== Indoor Wayfinding (First Response)
+* To assess the impact of urban development on local microclimates, such as temperature variation, wind patterns, and air quality.
+
+* To evaluate how new construction or changes to urban infrastructure affect the comfort, livability, and sustainability of the urban environment.
+
+Relevant thematic modules in CityGML for this use case include:
+
+* Building (for detailed 3D geometry and materials, which influence heat absorption and wind flow)
+
+* Vegetation (to model green spaces that impact air quality and temperature regulation)
+
+* Relief (to account for terrain and topography, which can affect wind patterns and heat distribution)
+
+* CityFurniture (to represent urban elements like trees, benches, and shelters that contribute to microclimate conditions)
+
+*Transportation (to model roads and their effect on urban heat islands and airflow)
 
 
-==== Facility Management
+
+=== Urban Heat Island Effect Assessment (combine with above?)
+To assess the impact of urbanization on local climate conditions, particularly the urban heat island effect.
+To identify areas of the city that are more susceptible to extreme heat and recommend mitigation strategies.
+The urban heat island effect occurs when urban areas experience higher temperatures than their rural surroundings due to human activities and the built environment. 3D city models help simulate temperature variations across the city, taking into account factors like building materials, vegetation, and heat-emitting infrastructure. This can guide decisions related to urban design, green spaces, and energy-efficient building strategies.
+
+Relevant modules in CityGML:
+
+Building (for analyzing the effects of building materials and urban density on heat retention)
+Vegetation (for evaluating the cooling effect of parks, trees, and other green spaces)
+Relief (to assess how the city's topography influences heat distribution)
+CityFurniture (for considering how small-scale urban elements like pavements and streetlights contribute to heat)
+
+
+
+==== First Response (Indoor )
+
+* To assist firefighters and emergency responders in navigating buildings during emergency situations, such as fires, ensuring efficient and safe operations.
+* To provide real-time, spatially accurate information about building layouts, exits, hazards, and key infrastructure to improve response times and reduce risks.
+In the first response use case, the goal is to equip emergency responders with detailed building information that can help them navigate quickly and effectively during high-pressure situations. Accurate and up-to-date 3D models of buildings can provide real-time data about building layouts, fire exits, hazardous materials, and emergency systems such as sprinklers, elevators, and ventilation. This allows firefighters to plan their routes more effectively, assess risks, and make informed decisions on the spot, improving both safety and efficiency in emergency operations.
+
+Relevant thematic modules in CityGML for this use case include:
+
+Building (to provide detailed 3D geometry of building structures, including rooms, corridors, staircases, and entry/exit points, which is essential for navigation during emergencies)
+BuildingPart (to represent individual floors, rooms, and sections of a building, enabling responders to locate specific areas and identify potential hazards such as storage rooms or chemical hazards)
+BuildingInstallation (to include critical infrastructure like fire alarms, sprinkler systems, ventilation shafts, and electrical panels that need to be accessed or disabled during a fire emergency)
+CityFurniture (to map exterior elements like hydrants, access points, and street furniture that aid in emergency response outside the building)
+Relief (to incorporate terrain and topography information that can influence accessibility to the building, especially in multi-story or uneven terrain environments)
+
+
+
+==== Facility Management of Buildings
+
+* To manage the lifecycle of buildings and infrastructure, ensuring efficient maintenance, operation, and optimization of resources.
+* To monitor and assess the condition of building components, systems, and equipment for timely interventions, repairs, or upgrades.
+
+This Use Case is not in the scope of this Best Practice as it focuses on single buildings. While it is theoretically possible to use CityGML, it is recommended to rely on BIM (IFC) models for this use case.
+While CityGML is focused on urban scale and context, IFC is better suited for managing the detailed, technical data required during construction and lifecycle management of buildings.
+
+
 [TODO]
 ====
-this requires further investigation
+this requires further investigation, IFC more suitable
 ====
 
 ==== 3D Cadastre
+* To manage, visualize, and assess ownership, land use, and legal rights over three-dimensional parcels of land.
+
+* To facilitate the registration of complex property boundaries, including underground and above-ground spaces, and resolve conflicts between overlapping land rights.
+
+In the context of 3D cadastre, the goal is to extend traditional 2D land registries to include the full vertical and underground dimensions of urban space. This is especially relevant in dense urban environments, where buildings, utilities, and infrastructure often span multiple levels or go underground. The 3D cadastre use case supports the creation of legal and ownership boundaries for both above-ground and sub-surface spaces, such as air rights, underground utilities, and property extensions like balconies or rooftops. It also aids in resolving conflicts between adjacent properties and facilitating the legal management of complex land use scenarios.
+
+Relevant thematic modules in CityGML for this use case include:
+
+* Building (to define the vertical extent and boundaries of buildings and their ownership, including roof and basement spaces)
+* BuildingPart (to represent individual building components, such as floors or rooms, which may have different owners or legal statuses)
+* LandUse (to define the land use and zoning regulations, supporting the management of property rights in accordance with urban planning)
+
+Optional/TBD
+* Transportation (for defining rights of way and boundaries of roads or public transportation infrastructure that may intersect or overlap with private properties)
+
 [TODO]
 ====
 this requires further investigation
@@ -153,7 +233,7 @@ Linked to other registries?
 
 
 
-== Conclusion (Qualitative)
+=== Conclusion (Qualitative)
 
 * Buildings ist most used Module in the CityGML Data Model for 3DCIM applications
 * 2nd Level Building features (Rooms, Storey) are not yet widely used in practice, but cities are planning to use it and use cases have been described

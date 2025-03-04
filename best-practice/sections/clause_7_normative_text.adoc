@@ -1,4 +1,4 @@
-== Clause containing normative material - Minimal Profile
+== Base Profile (normative)
 
 === Modules
 The CityGML Best Practice Guidance document provides an overview of how various CityGML modules align with the CityGML Standard.
@@ -48,20 +48,24 @@ The document also notes that database solutions are specific, and alternative me
 Applications must partially support the buildings module to comply with this profile.
 
 
+Recommended classes:
+
 **Building & Building Part**
-Applications must support the TopLevelFeatureType "Building" as well as the FeatureType "BuildingPart".
+Applications shall support the TopLevelFeatureType "Building" as well as the FeatureType "BuildingPart".
 
 
 **Storeys & Rooms**
 Applications may support the FeatureTypes "BuildingRoom", "BuildingUnit" and "Storeys"
 
 
-**Storeys & Rooms**
-Applications may support the FeatureTypes "BuildingRoom", "BuildingUnit" and "Storeys"
+Not recommended classes:
+
+**Building Installation & Furniture**
+Applications may support the FeatureTypes "BuildingInstallation", "BuildingUnit" and "Storeys"
 
 
-**Constructive **
-Applications may support the FeatureTypes "BuildingContructiveElements", "BuildingInstallation" and "BuildingFurniture"
+**Constructive Elements**
+Applications may support the FeatureTypes "BuildingContructiveElements", 
 
 
 
@@ -75,14 +79,13 @@ image::./figures/FIG3002.bmp[UML of class Building, excluded components are grey
 image::./figures/UML_Bridge.bmp[UML of class Bridge, excluded components are greyed out]
 
 
-==== Tunnel Module
-image::./figures/UML_Tunnel.bmp[UML of class Tunnel, excluded components are greyed out]
 
 
 ==== Vegetation Module
-
+[.figure,width=full-page-width]
+====
 image::./figures/UML_Vegetation.bmp[UML of class Vegetion, not required components are greyed out]
-
+===
 
 ==== CityFurniture Module
 
@@ -92,14 +95,19 @@ image::./figures/UML_Vegetation.bmp[UML of class Vegetion, not required componen
 
 === Optional Modules
 
-
-==== CityObjectGroup
-The support of the "Constructions""module is not required for compliance with this profile.
-
+==== Tunnel Module
+.UML of Tunnel Module
+image::./figures/UML_Tunnel.bmp[height=150]
 
 
 ==== Construction Module
 The support of the "Constructions""module is not required for compliance with this profile.
+
+-> better to use alternatives/ifc 
+-> no use cases that warrent the query of individual surfaces / constructive elements accross city
+
+==== Construction Module
+The support of the "CityObjectGroup""module is not required for compliance with this best practice.
 
 
 .UML of Construction Module
@@ -111,6 +119,7 @@ image::./figures/FIG3001.bmp[UML of class Construction, excluded components are 
   - **Tin**: Support is impractical due to constraints with Delaunay triangulation.
   - **RasterRelief**:  TINRelief/TriangulatedSurface is supported; alternatives for unsupported formats are suggested.
 
+-> in practice often from different source, also dedicated formats
 
 ==== Land Use
 
@@ -122,16 +131,17 @@ image::./figures/FIG3001.bmp[UML of class Construction, excluded components are 
 
 ==== Transportation Module
 
-
+-> recommended to use dedicated systems?
 
 
 ==== Appearance
 The support of the "Constructions""module is not required for compliance with this profile.
 
+-> alternatives way of storing textures?? also reality meshes
 
 
 === Excluded Modules
-Excluded from this profile. The following modules are not considered in the context of this best practice document
+Excluded from this profile. The following modules are not considered in the context of this best practice document.
 
 ==== Versioning
 The Versioning module is excluded from the scope of this profile.
@@ -140,6 +150,7 @@ It is recommended to rely on a external version control (git) or database system
 
 ==== Point Cloud 
 The Point Cloud module is excluded from the scope of this profile.
+It is recommended to use optimized storage formats and systems for point clouds.
 
 
 
